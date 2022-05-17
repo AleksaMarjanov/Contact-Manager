@@ -1,11 +1,60 @@
 {
-    "user": [{
-        "id": 1
-    }, {
-        "id": 2
-    },  {
-        "id": 3
-    }],
+    "user": [[
+        {
+          "id": "c8f594f6-28bd-4572-9c97-79328fbd486a",
+          "isActive": false,
+          "picture": "http://placehold.it/32x32",
+          "name": "Greta Gardner",
+          "email": "gretagardner@geologix.com",
+          "phone": "+1 (960) 516-3052",
+          "address": "248 Linden Boulevard, Blairstown, Pennsylvania, 6044"
+        },
+        {
+          "id": "578bb17a-4798-460d-b3e7-884c4f74edb8",
+          "isActive": false,
+          "picture": "http://placehold.it/32x32",
+          "name": "Kristina Parsons",
+          "email": "kristinaparsons@geologix.com",
+          "phone": "+1 (849) 516-2661",
+          "address": "259 Schenck Place, Inkerman, Guam, 395"
+        },
+        {
+          "id": "e5468bcd-089d-4047-8e87-f02a80e68f96",
+          "isActive": true,
+          "picture": "http://placehold.it/32x32",
+          "name": "Nanette Stephens",
+          "email": "nanettestephens@geologix.com",
+          "phone": "+1 (995) 472-2998",
+          "address": "562 Ovington Avenue, Highland, South Carolina, 4351"
+        },
+        {
+          "id": "379ca867-2329-4c3e-a246-4c690fcf2b43",
+          "isActive": false,
+          "picture": "http://placehold.it/32x32",
+          "name": "Terrie Mckinney",
+          "email": "terriemckinney@geologix.com",
+          "phone": "+1 (972) 529-2885",
+          "address": "883 Sunnyside Court, Beechmont, Rhode Island, 9993"
+        },
+        {
+          "id": "b5596432-1758-4a7d-958b-beb86f713018",
+          "isActive": true,
+          "picture": "http://placehold.it/32x32",
+          "name": "Phoebe Goodman",
+          "email": "phoebegoodman@geologix.com",
+          "phone": "+1 (858) 428-3517",
+          "address": "356 Crawford Avenue, Dunnavant, California, 8733"
+        },
+        {
+          "id": "fc375a88-6c4f-4416-945e-5d77375c6e38",
+          "isActive": true,
+          "picture": "http://placehold.it/32x32",
+          "name": "Mcdaniel Valdez",
+          "email": "mcdanielvaldez@geologix.com",
+          "phone": "+1 (983) 586-3889",
+          "address": "259 Lois Avenue, Rutherford, Minnesota, 3335"
+        }
+      ]],
     "tasks": [],
     "status": []
   }
