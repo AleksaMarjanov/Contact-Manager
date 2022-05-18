@@ -1,11 +1,16 @@
 import "./main.scss";
 import React from "react";
 import UsersList from "../users/users-list/UsersList";
+import User from "../users/user/User";
+import { Route, Routes } from "react-router";
 
 const Main = () => {
   return (
     <div className="main-content">
-      <UsersList />
+      <Routes>
+        <Route path="/users-list" element={<UsersList />} />
+        <Route path="/user/:id" element={<User />} />{" "}
+      </Routes>
     </div>
   );
 };
