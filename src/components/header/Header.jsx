@@ -14,7 +14,9 @@ const Header = () => {
             <Link className="nav-link" to="/users-list">
               Users List
             </Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Link className="nav-link" to="/user/create">
+              Create New User
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

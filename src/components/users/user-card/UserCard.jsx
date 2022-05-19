@@ -3,9 +3,8 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { deleteUser } from "./../../../utils/http-utils/User-request";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, deleteUser }) => {
   const navigate = useNavigate();
   const redirectToDetails = () => {
     navigate(`/user/${user.id}`);
