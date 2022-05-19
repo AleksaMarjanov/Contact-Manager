@@ -17,5 +17,9 @@ export const deleteUser = async (id) => {
 export const addUser = (user) => {
   if (!user.picture)
     user.picture = `https://picsum.photos/200/300?random=${Math.random()}`;
+
+  if (user.id) {
+    return axios.put(`${apiUrl}/${user.id}`, user);
+  }
   return axios.post(`${apiUrl}`, user);
 };

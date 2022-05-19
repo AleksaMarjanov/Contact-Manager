@@ -1,20 +1,13 @@
-// "id": "c8f594f6-28bd-4572-9c97-79328fbd486a",
-// "isActive": false,
-// "picture": "https://randomuser.me/api/portraits/women/71.jpg",
-// "name": "Greta Gardner",
-// "email": "gretagardner@geologix.com",
-// "phone": "+1 (960) 516-3052",
-// "address": "248 Linden Boulevard, Blairstown, Pennsylvania, 6044"
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./userform.scss";
 import { Form, Button } from "react-bootstrap";
-import { addUser } from "../../../utils/http-utils/User-request";
+import { addUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
 
 const UserForm = () => {
+  const params = useParams();
   const navigate = useNavigate();
-
   const [newUser, setNewUser] = useState({
     isActive: false,
     name: "",
@@ -24,8 +17,21 @@ const UserForm = () => {
     address: "",
   });
 
+  useEffect(() => {
+    if (params.id) {
+      getUserById(params.id).then((response) => {
+        setNewUser(response.data);
+      });
+    }
+  }, [params.id]);
+
   const onInputChange = (e) => {
-    const { name, value } = e.target;
+    let { name, value, checked } = e.target;
+
+    value = e.target.value;
+    if (name === "isActive") {
+      value = checked;
+    }
 
     setNewUser((prevUser) => {
       return {
@@ -33,15 +39,14 @@ const UserForm = () => {
         [name]: value,
       };
     });
+    console.log(newUser);
   };
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     addUser(newUser).then(() => {
-      console.log("Succesfully added new user");
       navigate("/users-list");
     });
-    console.log(newUser);
   };
 
   return (
@@ -77,6 +82,7 @@ const UserForm = () => {
             placeholder="Enter picture URL"
             onChange={onInputChange}
             name="picture"
+            value={newUser.picture}
           />
         </Form.Group>
 
@@ -87,6 +93,7 @@ const UserForm = () => {
             placeholder="Enter phone"
             onChange={onInputChange}
             name="phone"
+            value={newUser.phone}
             required
           />
         </Form.Group>
@@ -97,12 +104,19 @@ const UserForm = () => {
             placeholder="Enter address"
             onChange={onInputChange}
             name="address"
+            value={newUser.address}
             required
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Active" />
+          <Form.Check
+            type="checkbox"
+            label="Active"
+            name="isActive"
+            checked={newUser.isActive}
+            onChange={onInputChange}
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit

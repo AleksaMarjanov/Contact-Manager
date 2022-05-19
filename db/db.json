@@ -2,16 +2,16 @@
   "users": [
     {
       "id": "c8f594f6-28bd-4572-9c97-79328fbd486a",
-      "isActive": false,
+      "isActive": true,
       "picture": "https://randomuser.me/api/portraits/women/71.jpg",
-      "name": "Greta Gardner",
+      "name": "Greta Gardner ",
       "email": "gretagardner@geologix.com",
       "phone": "+1 (960) 516-3052",
       "address": "248 Linden Boulevard, Blairstown, Pennsylvania, 6044"
     },
     {
       "id": "578bb17a-4798-460d-b3e7-884c4f74edb8",
-      "isActive": false,
+      "isActive": true,
       "picture": "https://randomuser.me/api/portraits/women/69.jpg",
       "name": "Kristina Parsons",
       "email": "kristinaparsons@geologix.com",
@@ -19,22 +19,49 @@
       "address": "259 Schenck Place, Inkerman, Guam, 395"
     },
     {
-      "id": "b5596432-1758-4a7d-958b-beb86f713018",
-      "isActive": true,
-      "picture": "https://randomuser.me/api/portraits/women/58.jpg",
-      "name": "Phoebe Goodman",
-      "email": "phoebegoodman@geologix.com",
-      "phone": "+1 (858) 428-3517",
-      "address": "356 Crawford Avenue, Dunnavant, California, 8733"
+      "isActive": false,
+      "name": "Alex",
+      "picture": "https://pbs.twimg.com/profile_images/1510700341951561729/AIrTjju1_400x400.jpg",
+      "email": "mrwhiteispopular@gmail.com",
+      "phone": "hmmm?",
+      "address": "can't tell you for sure",
+      "id": "QscsTgd"
     },
     {
-      "id": "fc375a88-6c4f-4416-945e-5d77375c6e38",
-      "isActive": true,
-      "picture": "https://randomuser.me/api/portraits/men/49.jpg",
-      "name": "Mcdaniel Valdez",
-      "email": "mcdanielvaldez@geologix.com",
-      "phone": "+1 (983) 586-3889",
-      "address": "259 Lois Avenue, Rutherford, Minnesota, 3335"
+      "isActive": false,
+      "name": "Occupy the Web",
+      "picture": "https://pbs.twimg.com/profile_images/378800000080433150/15a3611a51ea416c857ba088cdff7d78_400x400.jpeg",
+      "email": "occupytheweb@gmail.com",
+      "phone": "burner",
+      "address": "unknown",
+      "id": "C3TCFaF"
+    },
+    {
+      "isActive": false,
+      "name": "Shibetoshi Nakamoto",
+      "picture": "https://pbs.twimg.com/profile_images/1521369379941715968/bg0KgPWm_400x400.jpg",
+      "email": "shibetoshinakamoto@outlook.com",
+      "phone": "Not sure",
+      "address": "Somewhere in US",
+      "id": "chDB1KN"
+    },
+    {
+      "isActive": false,
+      "name": "Marko Milic",
+      "picture": "https://picsum.photos/200/300?random=0.20106498196205558",
+      "email": "marko@gmail.com",
+      "phone": "222-333-5432",
+      "address": "New York",
+      "id": "qf9vDY7"
+    },
+    {
+      "isActive": false,
+      "name": "Zika Pavlovic",
+      "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.phkkcqGxGB-Uo_Cja18D6gHaJ4%26pid%3DApi&f=1",
+      "email": "zikaprijatelj@yahoo.com",
+      "phone": "Nema",
+      "address": "Srbija",
+      "id": "-cl4My9"
     }
   ],
   "tasks": [],
