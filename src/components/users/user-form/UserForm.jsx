@@ -9,8 +9,12 @@
 import React, { useState } from "react";
 import "./userform.scss";
 import { Form, Button } from "react-bootstrap";
+import { addUser } from "../../../utils/http-utils/User-request";
+import { useNavigate } from "react-router-dom";
 
 const UserForm = () => {
+  const navigate = useNavigate();
+
   const [newUser, setNewUser] = useState({
     isActive: false,
     name: "",
@@ -33,6 +37,10 @@ const UserForm = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    addUser(newUser).then(() => {
+      console.log("Succesfully added new user");
+      navigate("/users-list");
+    });
     console.log(newUser);
   };
 
