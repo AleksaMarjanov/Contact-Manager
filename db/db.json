@@ -55,13 +55,23 @@
       "id": "qf9vDY7"
     },
     {
-      "isActive": false,
+      "isActive": true,
       "name": "Zika Pavlovic",
       "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.phkkcqGxGB-Uo_Cja18D6gHaJ4%26pid%3DApi&f=1",
       "email": "zikaprijatelj@yahoo.com",
       "phone": "Nema",
       "address": "Srbija",
       "id": "-cl4My9"
+    },
+    {
+      "isActive": false,
+      "name": "Aleksa Marjanov",
+      "picture": "https://picsum.photos/200/300?random=0.17800199136194772",
+      "email": "aleksa1337@gmail.com",
+      "phone": "3035557898",
+      "address": "Unknown",
+      "password": "12345",
+      "id": "KI_VRky"
     }
   ],
   "tasks": [],

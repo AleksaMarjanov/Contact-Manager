@@ -1,66 +1,59 @@
-import React, { useState, useEffect } from "react";
-import "./userform.scss";
-import { Form, Button } from "react-bootstrap";
-import { addUser, getUserById } from "../../../utils/http-utils/User-request";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router";
+import React, { useState } from "react";
+import "./register.scss";
+import { registerUser } from "./../../../utils/http-utils/User-request";
+import { useNavigate } from "react-router";
+import { Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
-const UserForm = () => {
-  const params = useParams();
+const Register = () => {
   const navigate = useNavigate();
-  const [newUser, setNewUser] = useState({
+  const [newUser, SetNewUser] = useState({
     isActive: false,
     name: "",
     picture: "",
     email: "",
     phone: "",
     address: "",
+    password: "",
   });
-
-  useEffect(() => {
-    if (params.id) {
-      getUserById(params.id).then((response) => {
-        setNewUser(response.data);
-      });
-    }
-  }, [params.id]);
+  const [error, setError] = useState("");
 
   const onInputChange = (e) => {
-    let { name, value, checked } = e.target;
+    const { name, value } = e.target;
 
-    value = e.target.value;
-    if (name === "isActive") {
-      value = checked;
-    }
-
-    setNewUser((prevUser) => {
+    SetNewUser((prevUser) => {
       return {
         ...prevUser,
         [name]: value,
       };
     });
-    console.log(newUser);
+
+    setError("");
   };
 
-  const onFormSubmit = (e) => {
+  const onRegisterSubmit = (e) => {
     e.preventDefault();
-    addUser(newUser).then(() => {
-      navigate("/users-list");
-    });
+    registerUser(newUser)
+      .then(() => {
+        navigate("/users-list");
+      })
+      .catch((error) => setError(error.message));
+    // registerUser(user)
   };
 
   return (
     <div className="user-form-wrapper">
-      <Form onSubmit={onFormSubmit}>
+      <Form onSubmit={onRegisterSubmit}>
+        {error && <span className="text-danger">{error}</span>}
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>
           <Form.Control
-            required
             name="name"
             type="text"
             value={newUser.name}
             placeholder="Enter name"
             onChange={onInputChange}
+            required
           />
         </Form.Group>
 
@@ -109,16 +102,18 @@ const UserForm = () => {
             required
           />
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            label="Active"
-            name="isActive"
-            checked={newUser.isActive}
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Enter password"
+            name="password"
             onChange={onInputChange}
+            value={newUser.password}
+            required
           />
         </Form.Group>
+
         <Button variant="primary" type="submit">
           Submit
         </Button>
@@ -127,4 +122,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default Register;
