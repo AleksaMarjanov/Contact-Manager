@@ -15,7 +15,7 @@ const App = () => {
     <>
       <Routes>
         <Route
-          exact
+          // exact
           path="/register"
           element={
             <NonAuthenticatedGuard>
@@ -24,7 +24,7 @@ const App = () => {
           }
         />
         <Route
-          exact
+          // exact
           path="/login"
           element={
             <NonAuthenticatedGuard>
@@ -32,7 +32,7 @@ const App = () => {
             </NonAuthenticatedGuard>
           }
         />
-        <Route exact path="/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route
             path="/users-list"
             element={

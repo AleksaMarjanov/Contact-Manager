@@ -46,15 +46,6 @@
       "id": "chDB1KN"
     },
     {
-      "isActive": false,
-      "name": "Marko Milic",
-      "picture": "https://picsum.photos/200/300?random=0.20106498196205558",
-      "email": "marko@gmail.com",
-      "phone": "222-333-5432",
-      "address": "New York",
-      "id": "qf9vDY7"
-    },
-    {
       "isActive": true,
       "name": "Zika Pavlovic",
       "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.phkkcqGxGB-Uo_Cja18D6gHaJ4%26pid%3DApi&f=1",
@@ -74,6 +65,17 @@
       "id": "KI_VRky"
     }
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "test card",
+      "description": "test description",
+      "status": "New",
+      "authorId": "mrwhite",
+      "authorName": "Aleksa",
+      "createdDate": "2022-05-20",
+      "dueDate": "2022-06-20"
+    }
+  ],
   "status": []
 }

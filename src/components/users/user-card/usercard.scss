@@ -3,9 +3,14 @@
 }
 
 .btn-holder {
-  button {
-    margin: 10px;
-  }
+  margin: 20px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-holder:hover {
+  cursor: pointer;
 }
 
 .card {

@@ -1,8 +1,10 @@
 import "./usercard.scss";
 import React from "react";
-import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import InfoIcon from "@mui/icons-material/Info";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const UserCard = ({ user, deleteUser }) => {
   const navigate = useNavigate();
@@ -37,15 +39,9 @@ const UserCard = ({ user, deleteUser }) => {
           <span className="value">{user.phone}</span>
         </Card.Text>
         <div className="btn-holder">
-          <Button variant="primary" onClick={redirectToEdit}>
-            Edit
-          </Button>
-          <Button variant="danger" onClick={() => deleteUser(user.id)}>
-            Delete
-          </Button>
-          <Button variant="info" onClick={redirectToDetails}>
-            Details
-          </Button>
+          <EditIcon onClick={redirectToEdit}></EditIcon>
+          <DeleteIcon onClick={() => deleteUser(user.id)} />
+          <InfoIcon className="info" onClick={redirectToDetails}></InfoIcon>
         </div>
       </Card.Body>
     </Card>
