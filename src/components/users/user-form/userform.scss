@@ -1,6 +1,5 @@
 .user-form-wrapper {
   display: flex;
-  height: calc(100vh - 100px);
   justify-content: center;
   align-items: center;
 
@@ -10,4 +9,11 @@
     border-radius: 10px;
     width: 500px;
   }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }

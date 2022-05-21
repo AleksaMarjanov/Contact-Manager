@@ -50,80 +50,84 @@ const UserForm = () => {
   };
 
   return (
-    <div className="user-form-wrapper">
-      <Form onSubmit={onFormSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            required
-            name="name"
-            type="text"
-            value={newUser.name}
-            placeholder="Enter name"
-            onChange={onInputChange}
-          />
-        </Form.Group>
+    <>
+      {" "}
+      <h2 className="header">Create New User</h2>
+      <div className="user-form-wrapper">
+        <Form onSubmit={onFormSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              required
+              name="name"
+              type="text"
+              value={newUser.name}
+              placeholder="Enter name"
+              onChange={onInputChange}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            placeholder="Enter email"
-            onChange={onInputChange}
-            value={newUser.email}
-            required
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              name="email"
+              type="email"
+              placeholder="Enter email"
+              onChange={onInputChange}
+              value={newUser.email}
+              required
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Picture</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter picture URL"
-            onChange={onInputChange}
-            name="picture"
-            value={newUser.picture}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Picture</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter picture URL"
+              onChange={onInputChange}
+              name="picture"
+              value={newUser.picture}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Phone</Form.Label>
-          <Form.Control
-            type="tel"
-            placeholder="Enter phone"
-            onChange={onInputChange}
-            name="phone"
-            value={newUser.phone}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Address</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter address"
-            onChange={onInputChange}
-            name="address"
-            value={newUser.address}
-            required
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
+              type="tel"
+              placeholder="Enter phone"
+              onChange={onInputChange}
+              name="phone"
+              value={newUser.phone}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Address</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter address"
+              onChange={onInputChange}
+              name="address"
+              value={newUser.address}
+              required
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            label="Active"
-            name="isActive"
-            checked={newUser.isActive}
-            onChange={onInputChange}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </div>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check
+              type="checkbox"
+              label="Active"
+              name="isActive"
+              checked={newUser.isActive}
+              onChange={onInputChange}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
+    </>
   );
 };
 

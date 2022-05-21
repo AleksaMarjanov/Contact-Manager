@@ -42,34 +42,38 @@ const Login = () => {
   return (
     <>
       <Header />
-      <Form onSubmit={onRegisterSubmit}>
-        {error && <span className="text-danger">{error}</span>}
-        <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            type="text"
-            value={newUser.email}
-            placeholder="Enter name"
-            onChange={onInputChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Enter password"
-            name="password"
-            onChange={onInputChange}
-            value={newUser.password}
-            required
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <h2>Login</h2>
+      <div className="user-login-wrapper">
+        <Form onSubmit={onRegisterSubmit}>
+          {error && <span className="text-danger">{error}</span>}
+          <Form.Group className="mb-3">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              name="email"
+              type="text"
+              value={newUser.email}
+              placeholder="Enter name"
+              onChange={onInputChange}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter password"
+              name="password"
+              onChange={onInputChange}
+              value={newUser.password}
+              required
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
       <Footer />
     </>
   );

@@ -46,7 +46,7 @@ const Register = () => {
   return (
     <>
       <Header />
-      <h1> Register New User </h1>
+      <h1> Register </h1>
       <div className="user-form-wrapper ">
         <Form onSubmit={onRegisterSubmit} className="mt-5">
           {error && <span className="text-danger">{error}</span>}
