@@ -56,13 +56,13 @@
     },
     {
       "isActive": false,
-      "name": "Aleksa Marjanov",
-      "picture": "https://picsum.photos/200/300?random=0.17800199136194772",
-      "email": "aleksa1337@gmail.com",
-      "phone": "3035557898",
-      "address": "Unknown",
-      "password": "12345",
-      "id": "KI_VRky"
+      "name": "Angelina Vujcic",
+      "picture": "https://scontent-den4-1.xx.fbcdn.net/v/t1.6435-9/38053484_10209852850356563_8925288245516828672_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=X9TGzEt-7qsAX-EfdCL&_nc_ht=scontent-den4-1.xx&oh=00_AT9H7TkFKVI5PV9uS3h_VW3miWl_9MqF9EFGlaeYS2fdoA&oe=62B010D2",
+      "email": "angelina@gmail.com",
+      "phone": "unknown",
+      "address": "unknown",
+      "password": "cinc",
+      "id": "DVFyBru"
     }
   ],
   "tasks": [

@@ -5,7 +5,13 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { getLoggedUser } from "../../utils/http-utils/User-request";
 
 const Header = () => {
-  const user = getLoggedUser();
+  // if user is logged in it will display name of user and logout button
+  const isUserLoggedIn = getLoggedUser();
+  // method for logout
+  const handleLogout = () => {
+    localStorage.removeItem("loggedUser");
+    window.location.reload();
+  };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -21,18 +27,29 @@ const Header = () => {
               Create New User
             </Link>
           </Nav>
-          <Nav>
-            <div className="login">
-              {user ? <h6>Logged in as {user.name}</h6> : null}
-            </div>
-
-            <Link className="nav-link" to="/register">
-              Register
-            </Link>
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-          </Nav>
+          {isUserLoggedIn ? (
+            <Nav>
+              <div className="login">
+                {<h6>Logged in as {isUserLoggedIn.name}</h6>}
+              </div>
+              <Link
+                onClick={handleLogout}
+                className="nav-link"
+                to="/users-list"
+              >
+                Logout
+              </Link>
+            </Nav>
+          ) : (
+            <Nav>
+              <Link className="nav-link" to="/register">
+                Register
+              </Link>
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
