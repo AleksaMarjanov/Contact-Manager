@@ -22,7 +22,9 @@ export const deleteUser = async (id) => {
 export const addUser = (user) => {
   // if there is no picture that is provided it will be assigned random one
   if (!user.picture)
-    user.picture = `https://picsum.photos/200/300?random=${Math.random()}`;
+    user.picture = `https://picsum.photos/200/300?random=${Math.floor(
+      Math.random()
+    )}`;
   // if user has id it will update the info
   if (user.id) {
     return axios.put(`${apiUrl}/${user.id}`, user);
