@@ -8,45 +8,29 @@ import User from "./components/users/user/User";
 import UsersList from "./components/users/users-list/UsersList";
 import Login from "./components/auth/login/Login";
 import AuthenticatedRoute from "./utils/guards/AuthenticatedRoute";
-import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
 
 const App = () => {
   return (
-    <>
+    <div className="stage">
       <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route
-          // exact
-          path="/register"
+          path="/"
           element={
-            <NonAuthenticatedGuard>
-              <Register />{" "}
-            </NonAuthenticatedGuard>
+            <AuthenticatedRoute>
+              {" "}
+              <Layout />
+            </AuthenticatedRoute>
           }
-        />
-        <Route
-          // exact
-          path="/login"
-          element={
-            <NonAuthenticatedGuard>
-              <Login />{" "}
-            </NonAuthenticatedGuard>
-          }
-        />
-        <Route path="/" element={<Layout />}>
-          <Route
-            path="/users-list"
-            element={
-              <AuthenticatedRoute>
-                <UsersList />
-              </AuthenticatedRoute>
-            }
-          />
+        >
+          <Route path="/users-list" element={<UsersList />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/user/create" element={<UserForm />} />
           <Route path="/user/edit/:id" element={<UserForm />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };
 

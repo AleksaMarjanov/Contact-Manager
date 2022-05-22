@@ -39,9 +39,17 @@ const UserCard = ({ user, deleteUser }) => {
           <span className="value">{user.phone}</span>
         </Card.Text>
         <div className="btn-holder">
-          <EditIcon onClick={redirectToEdit}></EditIcon>
-          <DeleteIcon onClick={() => deleteUser(user.id)} />
-          <InfoIcon className="info" onClick={redirectToDetails}></InfoIcon>
+          <EditIcon color="success" onClick={redirectToEdit} className="edit" />
+          <DeleteIcon
+            color="error"
+            onClick={() => deleteUser(user.id)}
+            className="delete"
+          />
+          <InfoIcon
+            color="primary"
+            onClick={redirectToDetails}
+            className="info"
+          />
         </div>
       </Card.Body>
     </Card>

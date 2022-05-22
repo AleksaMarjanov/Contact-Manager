@@ -39,7 +39,6 @@ const UserForm = () => {
         [name]: value,
       };
     });
-    console.log(newUser);
   };
 
   const onFormSubmit = (e) => {
