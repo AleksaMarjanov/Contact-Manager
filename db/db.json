@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "c8f594f6-28bd-4572-9c97-79328fbd486a",
-      "isActive": true,
+      "isActive": false,
       "picture": "https://randomuser.me/api/portraits/women/71.jpg",
       "name": "Greta Gardner ",
       "email": "gretagardner@geologix.com",

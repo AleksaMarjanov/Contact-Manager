@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  height: calc(100vh - 100px);
   form {
     border: 1px solid gray;
     padding: 20px;

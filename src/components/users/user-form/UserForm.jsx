@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./userform.scss";
-import { Form, Button } from "react-bootstrap";
+import { Box, Button, TextField } from "@mui/material";
 import { addUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
+import Checkbox from "@mui/material/Checkbox";
 
 const UserForm = () => {
   const params = useParams();
@@ -47,84 +48,78 @@ const UserForm = () => {
       navigate("/users-list");
     });
   };
-
+  console.log(newUser.isActive);
   return (
     <>
       {" "}
-      <h2 className="header">Create New User</h2>
       <div className="user-form-wrapper">
-        <Form onSubmit={onFormSubmit}>
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              required
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { m: 2, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <div>
+            <TextField
+              InputLabelProps={{ required: true }}
               name="name"
-              type="text"
               value={newUser.name}
-              placeholder="Enter name"
+              id="outlined-required"
+              label="Name"
+              placeholder="Jane Doe"
               onChange={onInputChange}
             />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              name="email"
-              type="email"
-              placeholder="Enter email"
-              onChange={onInputChange}
-              value={newUser.email}
+            <TextField
               required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Picture</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter picture URL"
+              name="email"
+              value={newUser.email}
+              id="outlined-required"
+              label="E-Mail"
+              placeholder="janedoe@hotmail.com"
               onChange={onInputChange}
+            />
+            <TextField
+              required
               name="picture"
               value={newUser.picture}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Phone</Form.Label>
-            <Form.Control
-              type="tel"
-              placeholder="Enter phone"
+              id="outlined-required"
+              label="Picture"
+              placeholder="Enter Picture URL"
               onChange={onInputChange}
+            />
+            <TextField
+              required
               name="phone"
               value={newUser.phone}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Address</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter address"
+              id="outlined-required"
+              label="Phone"
+              placeholder="(303)-333-4444"
               onChange={onInputChange}
+            />
+            <TextField
+              required
               name="address"
               value={newUser.address}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check
-              type="checkbox"
-              label="Active"
-              name="isActive"
-              checked={newUser.isActive}
+              id="outlined-required"
+              label="Address"
+              placeholder="7939 New St.
+              Huntington, NY 11743"
               onChange={onInputChange}
             />
-          </Form.Group>
-          <Button variant="primary" type="submit">
+          </div>
+          <Checkbox
+            name="isActive"
+            value={newUser.isActive}
+            onChange={onInputChange}
+            inputProps={{ "aria-label": "controlled" }}
+          />
+          Active
+          <Button className="button" onClick={onFormSubmit} color="primary">
             Submit
           </Button>
-        </Form>
+        </Box>
       </div>
     </>
   );

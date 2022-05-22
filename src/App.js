@@ -8,13 +8,28 @@ import User from "./components/users/user/User";
 import UsersList from "./components/users/users-list/UsersList";
 import Login from "./components/auth/login/Login";
 import AuthenticatedRoute from "./utils/guards/AuthenticatedRoute";
+import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
 
 const App = () => {
   return (
     <div className="stage">
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/register"
+          element={
+            <NonAuthenticatedGuard>
+              <Register />
+            </NonAuthenticatedGuard>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <NonAuthenticatedGuard>
+              <Login />
+            </NonAuthenticatedGuard>
+          }
+        />
         <Route
           path="/"
           element={

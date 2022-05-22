@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./register.scss";
 import { registerUser } from "./../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router";
-import { Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Header from "./../../header/Header";
 import Footer from "./../../footer/Footer";
+import { TextField } from "@mui/material";
+import { Box } from "@mui/material";
+import { Button } from "@mui/material";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -48,7 +49,76 @@ const Register = () => {
       <Header />
       <h1> Register </h1>
       <div className="user-form-wrapper ">
-        <Form onSubmit={onRegisterSubmit} className="mt-5">
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { m: 2, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          {error && <span className="text-danger">{error}</span>}
+          <div>
+            <TextField
+              required
+              name="name"
+              value={newUser.name}
+              id="outlined-required"
+              label="Name"
+              defaultValue="Enter Name"
+              onChange={onInputChange}
+            />
+            <TextField
+              required
+              name="email"
+              value={newUser.email}
+              id="outlined-required"
+              label="E-Mail"
+              defaultValue="Enter E-mail"
+              onChange={onInputChange}
+            />
+            <TextField
+              required
+              name="picture"
+              value={newUser.picture}
+              id="outlined-required"
+              label="Picture"
+              defaultValue="Enter Picture URL"
+              onChange={onInputChange}
+            />
+            <TextField
+              required
+              name="phone"
+              value={newUser.phone}
+              id="outlined-required"
+              label="Phone"
+              defaultValue="Enter Phone"
+              onChange={onInputChange}
+            />
+            <TextField
+              required
+              name="address"
+              value={newUser.address}
+              id="outlined-required"
+              label="Address"
+              defaultValue="Enter Address"
+              onChange={onInputChange}
+            />
+            <TextField
+              id="outlined-password-input"
+              name="password"
+              value={newUser.password}
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              onChange={onInputChange}
+            />
+          </div>
+          <Button className="button" onClick={onRegisterSubmit} color="primary">
+            Submit
+          </Button>
+        </Box>
+        {/* <Form onSubmit={onRegisterSubmit} className="mt-5">
           {error && <span className="text-danger">{error}</span>}
           <Form.Group className="mb-3">
             <Form.Label>Name</Form.Label>
@@ -122,7 +192,7 @@ const Register = () => {
           <Button variant="primary" type="submit">
             Submit
           </Button>
-        </Form>
+        </Form> */}
       </div>
       <Footer />
     </>

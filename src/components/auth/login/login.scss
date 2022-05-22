@@ -6,10 +6,20 @@
   form {
     border: 1px solid gray;
     padding: 20px;
-    border-radius: 20px;
-    width: 500px;
+    border-radius: 10px;
+    width: 300px;
     background-color: #fff;
     box-shadow: 0 3px 14px #000;
+
+    button {
+      margin-left: 15px;
+    }
+
+    button:hover {
+      transform: translateY(-4px);
+      transition: all 0.1 ease-in-out;
+      color: red;
+    }
   }
 }
 

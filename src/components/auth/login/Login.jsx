@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./login.scss";
-import { Form } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+// import { Form } from "react-bootstrap";
+// import Button from "react-bootstrap/Button";
 import { login } from "./../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import Header from "./../../header/Header";
 import Footer from "../../footer/Footer";
+import { Box, Button } from "@mui/material";
+import { TextField } from "@mui/material";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ const Login = () => {
     setError("");
   };
 
-  const onRegisterSubmit = (e) => {
+  const onLoginSubmit = (e) => {
     e.preventDefault();
 
     login(newUser)
@@ -44,35 +46,39 @@ const Login = () => {
       <Header />
       <h2>Login</h2>
       <div className="user-login-wrapper">
-        <Form onSubmit={onRegisterSubmit}>
+        <Box
+          component="form"
+          sx={{
+            "& .MuiTextField-root": { m: 2, width: "25ch" },
+          }}
+          noValidate
+          autoComplete="off"
+        >
           {error && <span className="text-danger">{error}</span>}
-          <Form.Group className="mb-3">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
+          <div>
+            <TextField
+              required
               name="email"
-              type="text"
               value={newUser.email}
-              placeholder="Enter name"
+              id="outlined-required"
+              label="E-Mail"
+              defaultValue="Enter E-mail"
               onChange={onInputChange}
-              required
             />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Enter password"
+            <TextField
+              id="outlined-password-input"
               name="password"
-              onChange={onInputChange}
               value={newUser.password}
-              required
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              onChange={onInputChange}
             />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
+          </div>
+          <Button onClick={onLoginSubmit} color="primary">
+            Login
           </Button>
-        </Form>
+        </Box>
       </div>
       <Footer />
     </>
