@@ -41,7 +41,6 @@ const Register = () => {
         navigate("/users-list");
       })
       .catch((error) => setError(error.message));
-    // registerUser(user)
   };
 
   return (
@@ -54,31 +53,30 @@ const Register = () => {
           sx={{
             "& .MuiTextField-root": { m: 2, width: "25ch" },
           }}
-          noValidate
           autoComplete="off"
+          onSubmit={onRegisterSubmit}
         >
           {error && <span className="text-danger">{error}</span>}
           <div>
             <TextField
-              required
               name="name"
               value={newUser.name}
               id="outlined-required"
               label="Name"
               defaultValue="Enter Name"
               onChange={onInputChange}
+              required={true}
             />
             <TextField
-              required
               name="email"
               value={newUser.email}
               id="outlined-required"
               label="E-Mail"
               defaultValue="Enter E-mail"
               onChange={onInputChange}
+              required={true}
             />
             <TextField
-              required
               name="picture"
               value={newUser.picture}
               id="outlined-required"
@@ -87,112 +85,37 @@ const Register = () => {
               onChange={onInputChange}
             />
             <TextField
-              required
               name="phone"
               value={newUser.phone}
               id="outlined-required"
               label="Phone"
               defaultValue="Enter Phone"
               onChange={onInputChange}
+              required={true}
             />
             <TextField
-              required
               name="address"
               value={newUser.address}
               id="outlined-required"
               label="Address"
               defaultValue="Enter Address"
               onChange={onInputChange}
+              required={true}
             />
             <TextField
-              id="outlined-password-input"
               name="password"
               value={newUser.password}
               label="Password"
               type="password"
               autoComplete="current-password"
               onChange={onInputChange}
+              required={true}
             />
           </div>
-          <Button className="button" onClick={onRegisterSubmit} color="primary">
+          <Button type="submit" className="button" color="primary">
             Submit
           </Button>
         </Box>
-        {/* <Form onSubmit={onRegisterSubmit} className="mt-5">
-          {error && <span className="text-danger">{error}</span>}
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              name="name"
-              type="text"
-              value={newUser.name}
-              placeholder="Enter name"
-              onChange={onInputChange}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              name="email"
-              type="email"
-              placeholder="Enter email"
-              onChange={onInputChange}
-              value={newUser.email}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Picture</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter picture URL"
-              onChange={onInputChange}
-              name="picture"
-              value={newUser.picture}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Phone</Form.Label>
-            <Form.Control
-              type="tel"
-              placeholder="Enter phone"
-              onChange={onInputChange}
-              name="phone"
-              value={newUser.phone}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Address</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter address"
-              onChange={onInputChange}
-              name="address"
-              value={newUser.address}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Enter password"
-              name="password"
-              onChange={onInputChange}
-              value={newUser.password}
-              required
-            />
-          </Form.Group>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form> */}
       </div>
       <Footer />
     </>

@@ -51,21 +51,22 @@ const Login = () => {
           sx={{
             "& .MuiTextField-root": { m: 2, width: "25ch" },
           }}
-          noValidate
           autoComplete="off"
+          onSubmit={onLoginSubmit}
         >
           {error && <span className="text-danger">{error}</span>}
           <div>
             <TextField
-              required
+              required={true}
               name="email"
               value={newUser.email}
               id="outlined-required"
               label="E-Mail"
-              defaultValue="Enter E-mail"
+              placeholder="Enter E-mail"
               onChange={onInputChange}
             />
             <TextField
+              required={true}
               id="outlined-password-input"
               name="password"
               value={newUser.password}
@@ -75,7 +76,7 @@ const Login = () => {
               onChange={onInputChange}
             />
           </div>
-          <Button onClick={onLoginSubmit} color="primary">
+          <Button type="submit" color="primary">
             Login
           </Button>
         </Box>

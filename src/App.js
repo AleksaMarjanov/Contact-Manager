@@ -12,7 +12,7 @@ import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
 
 const App = () => {
   return (
-    <div className="stage">
+    <>
       <Routes>
         <Route
           path="/register"
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/user/edit/:id" element={<UserForm />} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 };
 

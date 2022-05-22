@@ -1,24 +1,6 @@
 {
   "users": [
     {
-      "id": "c8f594f6-28bd-4572-9c97-79328fbd486a",
-      "isActive": false,
-      "picture": "https://randomuser.me/api/portraits/women/71.jpg",
-      "name": "Greta Gardner ",
-      "email": "gretagardner@geologix.com",
-      "phone": "+1 (960) 516-3052",
-      "address": "248 Linden Boulevard, Blairstown, Pennsylvania, 6044"
-    },
-    {
-      "id": "578bb17a-4798-460d-b3e7-884c4f74edb8",
-      "isActive": true,
-      "picture": "https://randomuser.me/api/portraits/women/69.jpg",
-      "name": "Kristina Parsons",
-      "email": "kristinaparsons@geologix.com",
-      "phone": "+1 (849) 516-2661",
-      "address": "259 Schenck Place, Inkerman, Guam, 395"
-    },
-    {
       "isActive": false,
       "name": "Alex",
       "picture": "https://pbs.twimg.com/profile_images/1510700341951561729/AIrTjju1_400x400.jpg",
@@ -28,7 +10,7 @@
       "id": "QscsTgd"
     },
     {
-      "isActive": false,
+      "isActive": true,
       "name": "Occupy the Web",
       "picture": "https://pbs.twimg.com/profile_images/378800000080433150/15a3611a51ea416c857ba088cdff7d78_400x400.jpeg",
       "email": "occupytheweb@gmail.com",
@@ -90,16 +72,6 @@
       "phone": "Private",
       "address": "Private",
       "id": "t7DE-FU"
-    },
-    {
-      "isActive": false,
-      "name": "Aleksa Marjanov",
-      "picture": "https://picsum.photos/200/300?random=0",
-      "email": "aleksa@gmail.com",
-      "phone": "Private",
-      "address": "Private",
-      "password": "password",
-      "id": "ohunANe"
     }
   ],
   "tasks": [

@@ -18,6 +18,8 @@ const UserForm = () => {
     address: "",
   });
 
+  // window.location.reload();
+
   useEffect(() => {
     if (params.id) {
       getUserById(params.id).then((response) => {
@@ -48,7 +50,7 @@ const UserForm = () => {
       navigate("/users-list");
     });
   };
-  console.log(newUser.isActive);
+
   return (
     <>
       {" "}
@@ -58,57 +60,54 @@ const UserForm = () => {
           sx={{
             "& .MuiTextField-root": { m: 2, width: "25ch" },
           }}
-          noValidate
           autoComplete="off"
+          onSubmit={onFormSubmit}
         >
-          <div>
-            <TextField
-              InputLabelProps={{ required: true }}
-              name="name"
-              value={newUser.name}
-              id="outlined-required"
-              label="Name"
-              placeholder="Jane Doe"
-              onChange={onInputChange}
-            />
-            <TextField
-              required
-              name="email"
-              value={newUser.email}
-              id="outlined-required"
-              label="E-Mail"
-              placeholder="janedoe@hotmail.com"
-              onChange={onInputChange}
-            />
-            <TextField
-              required
-              name="picture"
-              value={newUser.picture}
-              id="outlined-required"
-              label="Picture"
-              placeholder="Enter Picture URL"
-              onChange={onInputChange}
-            />
-            <TextField
-              required
-              name="phone"
-              value={newUser.phone}
-              id="outlined-required"
-              label="Phone"
-              placeholder="(303)-333-4444"
-              onChange={onInputChange}
-            />
-            <TextField
-              required
-              name="address"
-              value={newUser.address}
-              id="outlined-required"
-              label="Address"
-              placeholder="7939 New St.
+          <TextField
+            name="name"
+            value={newUser.name}
+            id="outlined-required"
+            label="Name"
+            placeholder="Jane Doe"
+            onChange={onInputChange}
+            required={true}
+          />
+          <TextField
+            name="email"
+            value={newUser.email}
+            id="outlined-required"
+            label="E-Mail"
+            placeholder="janedoe@hotmail.com"
+            onChange={onInputChange}
+            required={true}
+          />
+          <TextField
+            name="picture"
+            value={newUser.picture}
+            id="outlined-required"
+            label="Picture"
+            placeholder="Enter Picture URL"
+            onChange={onInputChange}
+          />
+          <TextField
+            name="phone"
+            value={newUser.phone}
+            id="outlined-required"
+            label="Phone"
+            placeholder="(303)-333-4444"
+            onChange={onInputChange}
+            required={true}
+          />
+          <TextField
+            name="address"
+            value={newUser.address}
+            id="outlined-required"
+            label="Address"
+            placeholder="7939 New St.
               Huntington, NY 11743"
-              onChange={onInputChange}
-            />
-          </div>
+            onChange={onInputChange}
+            required={true}
+          />
           <Checkbox
             name="isActive"
             value={newUser.isActive}
@@ -116,7 +115,7 @@ const UserForm = () => {
             inputProps={{ "aria-label": "controlled" }}
           />
           Active
-          <Button className="button" onClick={onFormSubmit} color="primary">
+          <Button className="button" type="submit" color="primary">
             Submit
           </Button>
         </Box>

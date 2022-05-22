@@ -13,15 +13,11 @@ html {
 
 body {
   margin: 0;
-  position: relative;
   min-height: 100%;
   padding-bottom: 6rem;
   font-family: "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   position: relative;
   animation: animateBg 10s linear infinite;
   background: linear-gradient(

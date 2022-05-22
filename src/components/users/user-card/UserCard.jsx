@@ -18,7 +18,7 @@ const UserCard = ({ user, deleteUser }) => {
   };
 
   if (!user) {
-    return <p>No user!</p>;
+    return <h1 className="p-lead">No user!</h1>;
   }
 
   return (
