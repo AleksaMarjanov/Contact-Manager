@@ -1,33 +1,50 @@
-.key {
-  font-weight: bold;
-}
-
-.btn-holder {
-  margin: 20px;
-  bottom: 0;
+.user-card-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  .edit,
-  .delete,
-  .info {
-    font-size: 40px !important;
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    box-shadow: 0 3px 14px #000;
+    border-radius: 0.25rem;
+    width: 300px;
+    height: 600px;
+
+    img {
+      height: 350px;
+      padding-top: "56.25%"; // 16:9,
+      margin-top: 0px;
+    }
+
+    .key {
+      font-weight: bold;
+    }
+
+    .btn-holder {
+      margin: 20px;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .edit,
+      .delete,
+      .info {
+        font-size: 40px !important;
+      }
+
+      .edit:hover,
+      .delete:hover,
+      .info:hover {
+        transform: translateY(-4px);
+        transition: all 0.4s ease-in-out;
+      }
+    }
+    .btn-holder:hover {
+      cursor: pointer;
+    }
   }
-
-  .edit:hover,
-  .delete:hover,
-  .info:hover {
-    transform: translateY(-4px);
-    transition: all 0.4s ease-in-out;
-  }
-}
-.btn-holder:hover {
-  cursor: pointer;
-}
-
-.card {
-  margin: 20px;
-  box-shadow: 0 3px 14px #000;
-  border-radius: 0.25rem;
 }

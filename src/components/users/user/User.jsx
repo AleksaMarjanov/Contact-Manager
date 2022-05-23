@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { getUserById } from "../../../utils/http-utils/User-request";
 import UserCard from "./../user-card/UserCard";
 import { deleteUser } from "./../../../utils/http-utils/User-request";
+import "./user.scss";
 
 const User = () => {
   const params = useParams();
