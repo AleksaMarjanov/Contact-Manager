@@ -76,14 +76,14 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "title": "test card",
-      "description": "test description",
+      "title": "Novi zadatak",
+      "description": "test",
+      "dueDate": "Sun May 29 2022",
       "status": "New",
-      "authorId": "mrwhite",
-      "authorName": "Aleksa",
-      "createdDate": "2022-05-20",
-      "dueDate": "2022-06-20"
+      "authorId": "DVFyBru",
+      "authorName": "Angelina Vujcic",
+      "createdDate": "Tue May 24 2022",
+      "id": 4
     }
   ],
   "status": []

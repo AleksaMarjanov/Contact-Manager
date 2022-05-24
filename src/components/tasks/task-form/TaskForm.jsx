@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Box,
@@ -34,6 +34,7 @@ const TaskForm = () => {
 
   const onTaskSubmit = (e) => {
     e.preventDefault();
+
     addTask(task).then(() => {
       navigate(`/tasks-list`);
     });
@@ -71,6 +72,7 @@ const TaskForm = () => {
           name="dueDate"
           value={task.dueDate}
           id="outlined-required"
+          //   type="date" // looks wierd
           label="Due Date"
           placeholder="Enter Due date"
           onChange={onInputChange}
@@ -93,10 +95,6 @@ const TaskForm = () => {
                 {TaskStatus[status]}{" "}
               </MenuItem>
             ))}
-
-            {/* <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem> */}
           </Select>
         </FormControl>
         <Button className="button" type="submit" color="primary">

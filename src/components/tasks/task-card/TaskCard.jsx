@@ -7,13 +7,11 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Header from "./../../header/Header";
 import Footer from "./../../footer/Footer";
 
-const TaskCard = ({ task }) => {
+const TaskCard = ({ task, deleteTask }) => {
   return (
     <>
-      <Header />
       <div className="task-card-wrapper">
         {" "}
         <Card className="card" sx={{ maxWidth: 345 }}>
@@ -41,7 +39,11 @@ const TaskCard = ({ task }) => {
           <CardActions>
             <div className="btn-holder">
               <EditIcon color="success" className="edit" />
-              <DeleteIcon color="error" className="delete" />
+              <DeleteIcon
+                onClick={() => deleteTask(task.id)}
+                color="error"
+                className="delete"
+              />
               <InfoIcon color="primary" className="info" />
             </div>
           </CardActions>

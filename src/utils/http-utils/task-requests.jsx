@@ -23,9 +23,17 @@ export const addTask = (task) => {
 
     task.authorId = loggedUser.id;
     task.authorName = loggedUser.name;
-    task.createdDate = new Date().toString();
-    return axios.put(apiUrl, task);
+    task.status = TaskStatus.NEW;
+    task.createdDate = new Date().toDateString();
+    task.dueDate = new Date(task.dueDate).toDateString();
+    return axios.post(apiUrl, task);
   }
 
+  task.createdDate = new Date(task.createdDate).toDateString();
+  task.dueDate = new Date(task.dueDate).toDateString();
   return axios.put(`${apiUrl}/${task.id}`, task);
+};
+
+export const deleteTask = (id) => {
+  return axios.delete(`${apiUrl}/${id}`);
 };

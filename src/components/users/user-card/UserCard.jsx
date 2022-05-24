@@ -67,37 +67,6 @@ const UserCard = ({ user, deleteUser }) => {
         </CardActions>
       </Card>
     </div>
-    // <Card style={{ width: "18rem" }}>
-    //   <Card.Img variant="top" src={user.picture} />
-    //   <Card.Body>
-    //     <Card.Title>{user.name}</Card.Title>
-    //     <Card.Text>
-    //       <span className="key">Address:</span>
-    //       <span className="value">{user.address}</span>
-    //     </Card.Text>
-    //     <Card.Text>
-    //       <span className="key">Email:</span>
-    //       <span className="value">{user.email}</span>
-    //     </Card.Text>
-    //     <Card.Text>
-    //       <span className="key">Phone:</span>
-    //       <span className="value">{user.phone}</span>
-    //     </Card.Text>
-    //     <div className="btn-holder">
-    //       <EditIcon color="success" onClick={redirectToEdit} className="edit" />
-    //       <DeleteIcon
-    //         color="error"
-    //         onClick={() => deleteUser(user.id)}
-    //         className="delete"
-    //       />
-    //       <InfoIcon
-    //         color="primary"
-    //         onClick={redirectToDetails}
-    //         className="info"
-    //       />
-    //     </div>
-    //   </Card.Body>
-    // </Card>
   );
 };
 
