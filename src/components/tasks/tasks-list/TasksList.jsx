@@ -5,7 +5,6 @@ import {
   deleteTask,
 } from "../../../utils/http-utils/task-requests";
 import TaskCard from "../task-card/TaskCard";
-import Header from "./../../header/Header";
 
 const TasksList = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,7 +24,6 @@ const TasksList = () => {
 
   return (
     <>
-      <Header />
       <div className="tasks-list-wrapper">
         {tasks.map((task) => (
           <TaskCard key={task.id} task={task} deleteTask={deleteTaskHandler} />

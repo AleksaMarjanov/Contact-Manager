@@ -46,11 +46,10 @@ const App = () => {
           <Route path="/user/:id" element={<User />} />
           <Route path="/user/create" element={<UserForm />} />
           <Route path="/user/edit/:id" element={<UserForm />} />
-          {/* Tasks List doesn't work nested inside of Auth Route */}
-          {/* <Route path="/tasks-list" element={<TasksList />} /> */}
+
+          <Route path="/tasks-list" element={<TasksList />} />
+          <Route path="/task/create" element={<TaskForm />} />
         </Route>
-        <Route path="/tasks-list" element={<TasksList />} />
-        <Route path="/task/create" element={<TaskForm />} />
       </Routes>
     </>
   );
