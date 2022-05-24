@@ -1,0 +1,11 @@
+.task-form-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: calc(100vh - 50px);
+  border-radius: 30px;
+
+  form {
+    border-radius: 10px;
+  }
+}

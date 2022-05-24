@@ -27,28 +27,23 @@ const UserCard = ({ user, deleteUser }) => {
 
   return (
     <div className="user-card-wrapper">
-      <Card className="card">
-        <CardMedia
-          component="img"
-          alt="User"
-          height="140"
-          image={user.picture}
-        />
+      <Card className="card" sx={{ maxWidth: 345 }}>
+        <CardMedia component="img" alt="User" image={user.picture} />
         <CardContent>
           <Typography gutterBottom variant="h4" component="div">
             {user.name}
           </Typography>
           <Typography>
             <span className="key">Address:</span>
-            <span className="key"> {user.address}</span>
+            <span className="value"> {user.address}</span>
           </Typography>
           <Typography>
             <span className="key">E-mail:</span>
-            <span className="key"> {user.email}</span>
+            <span className="value"> {user.email}</span>
           </Typography>
           <Typography>
             <span className="key">Phone:</span>
-            <span className="key"> {user.phone}</span>
+            <span className="value"> {user.phone}</span>
           </Typography>
         </CardContent>
         <CardActions>

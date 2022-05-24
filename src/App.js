@@ -9,6 +9,8 @@ import UsersList from "./components/users/users-list/UsersList";
 import Login from "./components/auth/login/Login";
 import AuthenticatedRoute from "./utils/guards/AuthenticatedRoute";
 import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
+import TasksList from "./components/tasks/tasks-list/TasksList";
+import TaskForm from "./components/tasks/task-form/TaskForm";
 
 const App = () => {
   return (
@@ -30,6 +32,7 @@ const App = () => {
             </NonAuthenticatedGuard>
           }
         />
+
         <Route
           path="/"
           element={
@@ -43,7 +46,11 @@ const App = () => {
           <Route path="/user/:id" element={<User />} />
           <Route path="/user/create" element={<UserForm />} />
           <Route path="/user/edit/:id" element={<UserForm />} />
+          {/* Tasks List doesn't work nested inside of Auth Route */}
+          {/* <Route path="/tasks-list" element={<TasksList />} /> */}
         </Route>
+        <Route path="/tasks-list" element={<TasksList />} />
+        <Route path="/task/create" element={<TaskForm />} />
       </Routes>
     </>
   );

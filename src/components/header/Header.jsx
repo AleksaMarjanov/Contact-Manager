@@ -26,6 +26,12 @@ const Header = () => {
             <Link className="nav-link" to="/user/create">
               Create New User
             </Link>
+            <Link className="nav-link" to="/tasks-list">
+              All Tasks
+            </Link>
+            <Link className="nav-link" to="/task/create">
+              Create Task
+            </Link>
           </Nav>
           {isUserLoggedIn ? (
             <Nav>
