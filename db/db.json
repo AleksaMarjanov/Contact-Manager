@@ -79,11 +79,31 @@
       "title": "Novi zadatak",
       "description": "test",
       "dueDate": "Sun May 29 2022",
-      "status": "New",
+      "status": "In Progress",
       "authorId": "DVFyBru",
       "authorName": "Angelina Vujcic",
       "createdDate": "Tue May 24 2022",
       "id": 4
+    },
+    {
+      "title": "Test EDITED",
+      "description": "test desc",
+      "dueDate": "Wed Jun 29 2022",
+      "status": "In Progress",
+      "authorId": "DVFyBru",
+      "authorName": "Angelina Vujcic",
+      "createdDate": "Tue May 24 2022",
+      "id": 5
+    },
+    {
+      "title": "No user",
+      "description": "Test desc",
+      "dueDate": "Wed Mar 12 2025",
+      "status": "New",
+      "authorId": "DVFyBrudd",
+      "authorName": "Angelina Vujcic",
+      "createdDate": "Tue May 24 2022",
+      "id": 6
     }
   ],
   "status": []

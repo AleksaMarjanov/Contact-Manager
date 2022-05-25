@@ -49,6 +49,8 @@ const App = () => {
 
           <Route path="/tasks-list" element={<TasksList />} />
           <Route path="/task/create" element={<TaskForm />} />
+          <Route path="/task/edit/:id" element={<TaskForm />} />
+          <Route path="/task/:id" element={<TaskForm />} />
         </Route>
       </Routes>
     </>

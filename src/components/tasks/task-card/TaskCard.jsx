@@ -8,8 +8,21 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Footer from "./../../footer/Footer";
+import { getLoggedUser } from "./../../../utils/http-utils/User-request";
+import { useNavigate } from "react-router-dom";
 
 const TaskCard = ({ task, deleteTask }) => {
+  const loggedUser = getLoggedUser();
+  const navigate = useNavigate();
+
+  const navigateToEdit = () => {
+    navigate(`/task/edit/${task.id}`);
+  };
+
+  const navigateToDetails = () => {
+    navigate(`/task/${task.id}`);
+  };
+
   return (
     <>
       <div className="task-card-wrapper">
@@ -38,13 +51,25 @@ const TaskCard = ({ task, deleteTask }) => {
           </CardContent>
           <CardActions>
             <div className="btn-holder">
-              <EditIcon color="success" className="edit" />
-              <DeleteIcon
-                onClick={() => deleteTask(task.id)}
-                color="error"
-                className="delete"
+              {loggedUser && loggedUser.id === task.authorId && (
+                <EditIcon
+                  color="success"
+                  className="edit"
+                  onClick={navigateToEdit}
+                />
+              )}
+              {loggedUser && loggedUser.id === task.authorId && (
+                <DeleteIcon
+                  color="error"
+                  className="edit"
+                  onClick={() => deleteTask(task.id)}
+                />
+              )}
+              <InfoIcon
+                color="primary"
+                className="info"
+                onClick={navigateToDetails}
               />
-              <InfoIcon color="primary" className="info" />
             </div>
           </CardActions>
         </Card>

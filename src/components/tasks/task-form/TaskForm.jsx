@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Box,
@@ -8,8 +8,13 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import { addTask, TaskStatus } from "../../../utils/http-utils/task-requests";
+import {
+  addTask,
+  getTaskById,
+  TaskStatus,
+} from "../../../utils/http-utils/task-requests";
 import { useNavigate } from "react-router";
+import { useParams } from "react-router";
 import "./taskform.scss";
 
 const TaskForm = () => {
@@ -20,6 +25,16 @@ const TaskForm = () => {
     status: "",
   });
   const navigate = useNavigate();
+  const params = useParams();
+
+  useEffect(() => {
+    // if task has an id
+    if (params.id) {
+      getTaskById(params.id).then((response) => {
+        setTask(response.data);
+      });
+    }
+  }, [params.id]);
 
   const onInputChange = (e) => {
     let { name, value } = e.target;
@@ -98,7 +113,7 @@ const TaskForm = () => {
           </Select>
         </FormControl>
         <Button className="button" type="submit" color="primary">
-          Create
+          {task.id ? "Edit Task" : "Create Task"}
         </Button>
       </Box>
     </div>

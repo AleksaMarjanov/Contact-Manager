@@ -1,43 +1,4 @@
-.task-card-wrapper {
+.tasks-list-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    box-shadow: 0 3px 14px #000;
-    border-radius: 0.25rem;
-
-    background-color: whitesmoke;
-
-    .key {
-      font-weight: bold;
-    }
-
-    .btn-holder {
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .edit,
-      .delete,
-      .info {
-        font-size: 40px !important;
-      }
-
-      .edit:hover,
-      .delete:hover,
-      .info:hover {
-        transform: translateY(-4px);
-        transition: all 0.4s ease-in-out;
-      }
-    }
-    .btn-holder:hover {
-      cursor: pointer;
-    }
-  }
+  flex-wrap: wrap;
 }

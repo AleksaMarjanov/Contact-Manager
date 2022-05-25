@@ -17,6 +17,10 @@ export const getAllTasksForAuthor = (authorId) => {
   return axios.get(`${apiUrl}?authorId=${authorId}`);
 };
 
+export const getTaskById = (taskId) => {
+  return axios.get(`${apiUrl}/${taskId}`);
+};
+
 export const addTask = (task) => {
   if (!task.id) {
     const loggedUser = getLoggedUser();
