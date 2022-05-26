@@ -1,0 +1,22 @@
+.user-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+
+  form {
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 3px 14px #000;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}

@@ -8,6 +8,7 @@ export const TaskStatus = {
   DONE: "Done",
 };
 const apiUrl = "http://localhost:3005/tasks";
+// const apiUrl = "https://6277c8b22f94a1d7061233cb.mockapi.io/Crud";
 
 export const getAllTasks = () => {
   return axios.get(apiUrl);

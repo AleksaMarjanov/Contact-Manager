@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./userform.scss";
+import "./userformedit.scss";
 import { Box, Button, TextField } from "@mui/material";
 import { addUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
 import Checkbox from "@mui/material/Checkbox";
 
-const UserForm = () => {
+const UserFormEdit = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
@@ -122,4 +122,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default UserFormEdit;

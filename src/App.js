@@ -6,6 +6,7 @@ import Register from "./components/auth/register/Register";
 import UserForm from "./components/users/user-form/UserForm";
 import User from "./components/users/user/User";
 import UsersList from "./components/users/users-list/UsersList";
+import UserFormEdit from "./components/users/user-form-edit/UserFormEdit";
 import Login from "./components/auth/login/Login";
 import AuthenticatedRoute from "./utils/guards/AuthenticatedRoute";
 import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
@@ -45,8 +46,9 @@ const App = () => {
           <Route path="/users-list" element={<UsersList />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/user/create" element={<UserForm />} />
-          <Route path="/user/edit/:id" element={<UserForm />} />
-
+          <Route path="/user/edit/:id" element={<UserFormEdit />} />
+          {/* new user prop  */}
+          {/* higher order comp */}
           <Route path="/tasks-list" element={<TasksList />} />
           <Route path="/task/create" element={<TaskForm />} />
           <Route path="/task/edit/:id" element={<TaskForm />} />

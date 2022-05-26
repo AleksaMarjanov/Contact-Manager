@@ -63,7 +63,7 @@ const Register = () => {
               value={newUser.name}
               id="outlined-required"
               label="Name"
-              defaultValue="Enter Name"
+              placeholder="Enter Name"
               onChange={onInputChange}
               required={true}
             />
@@ -72,7 +72,7 @@ const Register = () => {
               value={newUser.email}
               id="outlined-required"
               label="E-Mail"
-              defaultValue="Enter E-mail"
+              placeholder="Enter E-mail"
               onChange={onInputChange}
               required={true}
             />
@@ -81,7 +81,7 @@ const Register = () => {
               value={newUser.picture}
               id="outlined-required"
               label="Picture"
-              defaultValue="Enter Picture URL"
+              placeholder="Enter Picture URL"
               onChange={onInputChange}
             />
             <TextField
@@ -89,7 +89,7 @@ const Register = () => {
               value={newUser.phone}
               id="outlined-required"
               label="Phone"
-              defaultValue="Enter Phone"
+              placeholder="Enter Phone"
               onChange={onInputChange}
               required={true}
             />
@@ -98,7 +98,7 @@ const Register = () => {
               value={newUser.address}
               id="outlined-required"
               label="Address"
-              defaultValue="Enter Address"
+              placeholder="Enter Address"
               onChange={onInputChange}
               required={true}
             />

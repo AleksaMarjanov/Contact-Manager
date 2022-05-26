@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const apiUrl = "http://localhost:3005/users";
+// const apiUrl = "https://6277c8b22f94a1d7061233cb.mockapi.io/Crud";
 
 export const getLoggedUser = () => {
   return JSON.parse(localStorage.getItem("loggedUser"));
