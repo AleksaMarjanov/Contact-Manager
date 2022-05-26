@@ -45,8 +45,8 @@ const App = () => {
         >
           <Route path="/users-list" element={<UsersList />} />
           <Route path="/user/:id" element={<User />} />
-          <Route path="/user/create" element={<UserForm />} />
-          <Route path="/user/edit/:id" element={<UserFormEdit />} />
+          <Route path="/user/create" element={<UserFormEdit />} />
+          <Route path="/user/edit/:id" element={<UserForm />} />
           {/* new user prop  */}
           {/* higher order comp */}
           <Route path="/tasks-list" element={<TasksList />} />
