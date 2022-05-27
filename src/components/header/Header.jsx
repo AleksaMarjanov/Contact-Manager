@@ -13,6 +13,8 @@ const Header = () => {
     window.location.reload();
   };
 
+  const taskUrl = `/tasks/${isUserLoggedIn.id}`;
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -25,6 +27,9 @@ const Header = () => {
             </Link>
             <Link className="nav-link" to="/user/create">
               Create New User
+            </Link>
+            <Link className="nav-link" to={taskUrl}>
+              My tasks
             </Link>
             <Link className="nav-link" to="/tasks-list">
               All Tasks

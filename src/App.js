@@ -12,6 +12,7 @@ import AuthenticatedRoute from "./utils/guards/AuthenticatedRoute";
 import NonAuthenticatedGuard from "./utils/guards/NonAuthenticatedGuard";
 import TasksList from "./components/tasks/tasks-list/TasksList";
 import TaskForm from "./components/tasks/task-form/TaskForm";
+import TaskFormEdit from "./components/tasks/task-formEdit/TaskFormEdit";
 
 const App = () => {
   return (
@@ -51,8 +52,8 @@ const App = () => {
           {/* higher order comp */}
           <Route path="/tasks-list" element={<TasksList />} />
           <Route path="/task/create" element={<TaskForm />} />
-          <Route path="/task/edit/:id" element={<TaskForm />} />
-          <Route path="/task/:id" element={<TaskForm />} />
+          <Route path="/task/edit/:id" element={<TaskFormEdit />} />
+          <Route path="/tasks/:id" element={<TasksList />} />
         </Route>
       </Routes>
     </>

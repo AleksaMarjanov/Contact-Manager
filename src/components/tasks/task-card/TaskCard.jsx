@@ -1,6 +1,5 @@
 import React from "react";
 import "./taskcard.scss";
-import InfoIcon from "@mui/icons-material/Info";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Card from "@mui/material/Card";
@@ -10,8 +9,10 @@ import Typography from "@mui/material/Typography";
 import Footer from "./../../footer/Footer";
 import { getLoggedUser } from "./../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
+import { TaskStatus } from "../../../utils/http-utils/task-requests";
+import { Button } from "@mui/material";
 
-const TaskCard = ({ task, deleteTask }) => {
+const TaskCard = ({ task, deleteTask, changeStatus }) => {
   const loggedUser = getLoggedUser();
   const navigate = useNavigate();
 
@@ -19,8 +20,38 @@ const TaskCard = ({ task, deleteTask }) => {
     navigate(`/task/edit/${task.id}`);
   };
 
-  const navigateToDetails = () => {
-    navigate(`/task/${task.id}`);
+  const getNextStateButton = () => {
+    switch (task.status) {
+      case TaskStatus.NEW:
+        return (
+          <Button
+            color="warning"
+            onClick={() => changeStatus(TaskStatus.IN_PROGRESS, task.id)}
+          >
+            Move to in Progress
+          </Button>
+        );
+      case TaskStatus.IN_PROGRESS:
+        return (
+          <Button
+            color="error"
+            onClick={() => changeStatus(TaskStatus.IN_REVIEW, task.id)}
+          >
+            Move to in Review
+          </Button>
+        );
+      case TaskStatus.IN_REVIEW:
+        return (
+          <Button
+            color="success"
+            onClick={() => changeStatus(TaskStatus.DONE, task.id)}
+          >
+            Move to Done
+          </Button>
+        );
+      default:
+        <Button color="success">Status</Button>;
+    }
   };
 
   return (
@@ -65,11 +96,7 @@ const TaskCard = ({ task, deleteTask }) => {
                   onClick={() => deleteTask(task.id)}
                 />
               )}
-              <InfoIcon
-                color="primary"
-                className="info"
-                onClick={navigateToDetails}
-              />
+              {getNextStateButton()}
             </div>
           </CardActions>
         </Card>

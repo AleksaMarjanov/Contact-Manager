@@ -79,7 +79,7 @@
       "title": "Novi zadatak",
       "description": "test",
       "dueDate": "Sun May 29 2022",
-      "status": "In Progress",
+      "status": "Done",
       "authorId": "DVFyBru",
       "authorName": "Angelina Vujcic",
       "createdDate": "Tue May 24 2022",
@@ -89,7 +89,7 @@
       "title": "Test EDITED",
       "description": "test desc",
       "dueDate": "Wed Jun 29 2022",
-      "status": "In Progress",
+      "status": "Done",
       "authorId": "DVFyBru",
       "authorName": "Angelina Vujcic",
       "createdDate": "Tue May 24 2022",
@@ -99,11 +99,31 @@
       "title": "No user",
       "description": "Test desc",
       "dueDate": "Wed Mar 12 2025",
-      "status": "New",
+      "status": "Done",
       "authorId": "DVFyBrudd",
       "authorName": "Angelina Vujcic",
       "createdDate": "Tue May 24 2022",
       "id": 6
+    },
+    {
+      "id": 7,
+      "title": "Task Test 4",
+      "description": "dsqadas",
+      "dueDate": "Sun Jun 12 2022",
+      "status": "Done",
+      "authorId": "DVFyBru",
+      "authorName": "Angelina Vujcic",
+      "createdDate": "Thu May 26 2022"
+    },
+    {
+      "id": 8,
+      "title": "Tasss",
+      "description": "tesraedr",
+      "dueDate": "Sat Jun 03 2023",
+      "status": "In Progress",
+      "authorId": "DVFyBru",
+      "authorName": "Angelina Vujcic",
+      "createdDate": "Thu May 26 2022"
     }
   ],
   "status": []
