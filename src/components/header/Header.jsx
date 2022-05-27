@@ -13,7 +13,7 @@ const Header = () => {
     window.location.reload();
   };
 
-  const taskUrl = `/tasks/${isUserLoggedIn.id}`;
+  let taskUrl = "";
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -28,9 +28,7 @@ const Header = () => {
             <Link className="nav-link" to="/user/create">
               Create New User
             </Link>
-            <Link className="nav-link" to={taskUrl}>
-              My tasks
-            </Link>
+
             <Link className="nav-link" to="/tasks-list">
               All Tasks
             </Link>
@@ -39,18 +37,24 @@ const Header = () => {
             </Link>
           </Nav>
           {isUserLoggedIn ? (
-            <Nav>
-              <div className="login">
-                {<h6>Logged in as {isUserLoggedIn.name}</h6>}
-              </div>
-              <Link
-                onClick={handleLogout}
-                className="nav-link"
-                to="/users-list"
-              >
-                Logout
-              </Link>
-            </Nav>
+            <>
+              <Nav>
+                <div className="login">
+                  {<h6>Logged in as {isUserLoggedIn.name}</h6>}
+                </div>
+                <Link
+                  onClick={handleLogout}
+                  className="nav-link"
+                  to="/users-list"
+                >
+                  Logout
+                </Link>
+                {(taskUrl = `/tasks/${isUserLoggedIn.id}`)}
+                <Link className="nav-link" to={taskUrl}>
+                  My tasks
+                </Link>
+              </Nav>
+            </>
           ) : (
             <Nav>
               <Link className="nav-link" to="/register">
