@@ -13,8 +13,6 @@ const Header = () => {
     window.location.reload();
   };
 
-  let picture = localStorage.getItem("picture");
-
   const handleMyTask = () => {
     return `/tasks/${isUserLoggedIn.id}`;
   };
@@ -23,7 +21,12 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/users-list">
-          <img height="50px" src={picture} alt="user logo" />
+          <img
+            className="userlogo"
+            height="50px"
+            src="https://pbs.twimg.com/profile_images/1510700341951561729/AIrTjju1_400x400.jpg"
+            alt="user logo"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
