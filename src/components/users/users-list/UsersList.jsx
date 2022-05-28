@@ -4,7 +4,7 @@ import UserCard from "../user-card/UserCard";
 import {
   deleteUser,
   getAllUsers,
-} from "./../../../utils/http-utils/User-request";
+} from "../../../utils/http-utils/User-request";
 // import  uuid  from "uuidv4";
 
 const UsersList = () => {

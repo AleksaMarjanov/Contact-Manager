@@ -72,6 +72,16 @@
       "phone": "7012512233",
       "address": "Private",
       "id": "t7DE-FU"
+    },
+    {
+      "isActive": false,
+      "name": "Aleksa",
+      "picture": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.iv2-uXBj25t8Stl9c0kCiQHaHa%26pid%3DApi&f=1",
+      "email": "admin@gmail.com",
+      "phone": "Unknown",
+      "address": "USA",
+      "password": "123456",
+      "id": "wGixFYj"
     }
   ],
   "tasks": [
@@ -120,7 +130,7 @@
       "title": "Tasss",
       "description": "tesraedr",
       "dueDate": "Sat Jun 03 2023",
-      "status": "In Progress",
+      "status": "Done",
       "authorId": "DVFyBru",
       "authorName": "Angelina Vujcic",
       "createdDate": "Thu May 26 2022"
