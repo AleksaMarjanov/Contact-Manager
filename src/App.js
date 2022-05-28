@@ -48,8 +48,7 @@ const App = () => {
           <Route path="/user/:id" element={<User />} />
           <Route path="/user/create" element={<UserFormEdit />} />
           <Route path="/user/edit/:id" element={<UserForm />} />
-          {/* new user prop  */}
-          {/* higher order comp */}
+
           <Route path="/tasks-list" element={<TasksList />} />
           <Route path="/task/create" element={<TaskForm />} />
           <Route path="/task/edit/:id" element={<TaskFormEdit />} />

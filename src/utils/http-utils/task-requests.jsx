@@ -7,7 +7,7 @@ export const TaskStatus = {
   IN_REVIEW: "In Review",
   DONE: "Done",
 };
-// const apiUrl = "http://localhost:3005/tasks";
+// const apiUrl = "http://localhost:3005/tasks"; // Using Json server
 const apiUrl = "https://62918273cd0c91932b63d8a7.mockapi.io/Task";
 
 export const getAllTasks = () => {

@@ -26,8 +26,8 @@ const UsersList = () => {
 
   return (
     <div className="users-list-wrapper">
-      {users.map((user) => (
-        <UserCard key={user.id} user={user} deleteUser={deleteUserHandler} />
+      {users.map((user, index) => (
+        <UserCard key={index} user={user} deleteUser={deleteUserHandler} />
       ))}
     </div>
   );

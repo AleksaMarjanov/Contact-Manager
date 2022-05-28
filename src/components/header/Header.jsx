@@ -13,14 +13,16 @@ const Header = () => {
     window.location.reload();
   };
 
-  const picture = localStorage.getItem("picture");
+  let picture = localStorage.getItem("picture");
 
   let taskUrl = "";
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="/users-list">Task Manager</Navbar.Brand>
+        <Navbar.Brand href="/users-list">
+          <img height="60px" src={picture} alt="user logo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -49,14 +51,6 @@ const Header = () => {
                 </div>
                 <div className="login">
                   {<h6>Logged in as {isUserLoggedIn.name}</h6>}
-                  {
-                    <img
-                      className="userlogo"
-                      style={{ width: "5px", borderRadius: "200px" }}
-                      src={picture}
-                      alt="user logo"
-                    />
-                  }
                 </div>
 
                 <Link

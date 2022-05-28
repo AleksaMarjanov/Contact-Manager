@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const apiUrl = "http://localhost:3005/users";
-const apiUrl = "https://6277c8b22f94a1d7061233cb.mockapi.io/crud";
+const apiUrl = "https://62926f7acd0c91932b724671.mockapi.io/Users";
 
 export const getLoggedUser = () => {
   return JSON.parse(localStorage.getItem("loggedUser"));
@@ -16,9 +16,10 @@ export const getUserById = (id) => {
   return axios.get(`${apiUrl}/${id}`);
 };
 // Method for deleting user
-export const deleteUser = async (id) => {
-  return await axios.delete(`${apiUrl}/${id}`);
+export const deleteUser = (id) => {
+  return axios.delete(`${apiUrl}/${id}`);
 };
+
 // Method for Adding user
 export const addUser = (user) => {
   // if there is no picture that is provided it will be assigned random one
