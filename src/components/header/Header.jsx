@@ -15,13 +15,15 @@ const Header = () => {
 
   let picture = localStorage.getItem("picture");
 
-  let taskUrl = "";
+  const handleMyTask = () => {
+    return `/tasks/${isUserLoggedIn.id}`;
+  };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/users-list">
-          <img height="60px" src={picture} alt="user logo" />
+          <img height="50px" src={picture} alt="user logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -39,16 +41,18 @@ const Header = () => {
             <Link className="nav-link" to="/task/create">
               Create Task
             </Link>
-            <Link className="nav-link" to={taskUrl}>
-              My tasks
-            </Link>
           </Nav>
           {isUserLoggedIn ? (
             <>
               <Nav>
-                <div className="mytasks">
-                  {(taskUrl = `/tasks/${isUserLoggedIn.id}`)}
-                </div>
+                <Link
+                  className="nav-link"
+                  onClick={handleMyTask}
+                  to={`/tasks/${isUserLoggedIn.id}`}
+                >
+                  My tasks
+                </Link>
+
                 <div className="login">
                   {<h6>Logged in as {isUserLoggedIn.name}</h6>}
                 </div>

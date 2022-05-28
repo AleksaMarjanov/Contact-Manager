@@ -6,12 +6,11 @@
 
 .mytasks {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 }
 
 .userlogo {
   display: flex;
-  flex-direction: inherit;
   align-items: center;
 }
