@@ -8,8 +8,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## <a href='https://main.d36r31clvcovfo.amplifyapp.com/login' >View Here</a>
 
-## Preview of the project //
-
 # Register Page
 
 <img src="https://i.ibb.co/PMvn8FG/Register.png" width="800px" >
