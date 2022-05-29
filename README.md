@@ -2,9 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Using RESTful API created with json server
+## Using MockAPI for REST API
 
-### `npm run start-json:server`
+### Project has been deployed to AWS Elastic Beanstalk
+
+## <a href='https://main.d36r31clvcovfo.amplifyapp.com/login' >View Here</a>
+
+## Preview of the project
 
 ## Available Scripts
 
