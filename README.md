@@ -38,6 +38,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <img src="https://ibb.co/GvT1fhd" width="800px">
 
+<img src="https://i.ibb.co/6tKyzRG/2022-05-07-07-39-47-Movie-Reviews.png" width="800px">
+
 ## Available Scripts
 
 In the project directory, you can run:
