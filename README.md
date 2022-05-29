@@ -12,33 +12,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Register Page
 
-<img src="https://ibb.co/Qk3RGpv" width="800px" >
+<img src="https://i.ibb.co/PMvn8FG/Register.png" width="800px" >
 
 # Login Page
 
-<img src="https://ibb.co/qRwvdMq" width="800px" >
+<img src="https://i.ibb.co/LCf38zj/Login.png" width="800px" >
 
 # Creating a new User
 
-<img src="https://ibb.co/0Js4MFR" width="800px">
+<img src="https://i.ibb.co/KyK4qLp/Create-New-User.png" width="800px">
 
 # Editing user
 
-<img src="https://ibb.co/VTCVgZC" width="800px">
+<img src="https://i.ibb.co/0r9qCS9/EditUser.png" width="800px">
 
 # Creating a new Task
 
-<img src="https://ibb.co/SBZgw1H" width="800px">
+<img src="https://i.ibb.co/sqX49Dc/Create-New-Task.png" width="800px">
 
 # Tasks of single user
 
-<img src="https://ibb.co/Y7GMNR4" width="800px">
+<img src="https://i.ibb.co/RpWmgvG/MyTasks.png" width="800px">
 
 # All Tasks Page:
 
-<img src="https://ibb.co/GvT1fhd" width="800px">
-
-<img src="https://i.ibb.co/6tKyzRG/2022-05-07-07-39-47-Movie-Reviews.png" width="800px">
+<img src="https://i.ibb.co/FbVfkPh/AllTasks.png" width="800px">
 
 ## Available Scripts
 
