@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./login.scss";
-// import { Form } from "react-bootstrap";
-// import Button from "react-bootstrap/Button";
 import { login } from "./../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import Header from "./../../header/Header";
