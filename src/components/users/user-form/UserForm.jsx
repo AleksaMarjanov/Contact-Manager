@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./userform.scss";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { addUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
@@ -16,6 +16,10 @@ const UserForm = () => {
     email: "",
     phone: "",
     address: "",
+    role : {
+      admin: "",
+      user: "",
+    }
   });
 
   useEffect(() => {
@@ -113,6 +117,22 @@ const UserForm = () => {
             inputProps={{ "aria-label": "controlled" }}
           />
           Active
+          <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Role</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            label="role"
+            name="role"
+            value={newUser.role}
+            placeholder="Select Status"
+            onChange={onInputChange}
+          >
+          <MenuItem value="user">User</MenuItem>
+    <MenuItem value="admin">Admin</MenuItem>
+          </Select>
+        </FormControl>
+        
           <Button className="button" type="submit" color="primary">
             Submit
           </Button>
