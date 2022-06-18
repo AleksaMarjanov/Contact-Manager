@@ -79,7 +79,7 @@ const Login = () => {
             Login
           </Button>
           <div className="signup">
-          <Link to='/register'>Sign Up</Link>
+          <Link to='/register' className="nav-link">Sign Up</Link>
           </div> 
         </Box>
       </div>

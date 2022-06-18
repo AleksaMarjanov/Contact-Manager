@@ -7,6 +7,7 @@ import Footer from "./../../footer/Footer";
 import { TextField } from "@mui/material";
 import { Box } from "@mui/material";
 import { Button } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -45,18 +46,20 @@ const Register = () => {
 
   return (
     <>
-      <Header />
-      <h1> Register </h1>
-      <div className="user-form-wrapper ">
-        <Box
-          component="form"
-          sx={{
-            "& .MuiTextField-root": { m: 2, width: "25ch" },
-          }}
-          autoComplete="off"
-          onSubmit={onRegisterSubmit}
-        >
-          {error && <span className="text-danger">{error}</span>}
+    <Header />
+    <div className="header-wrapper">
+    <h1> Register </h1>
+    </div>
+    <div className="user-form-wrapper ">
+      <Box
+      component="form"
+      sx={{
+        "& .MuiTextField-root": { m: 2, width: "25ch" },
+      }}
+      autoComplete="off"
+      onSubmit={onRegisterSubmit}
+      >
+      {error && <span className="text-danger">{error}</span>}
           <div>
             <TextField
               name="name"
@@ -116,7 +119,10 @@ const Register = () => {
           <Button type="submit" className="button" color="primary">
             Submit
           </Button>
-        </Box>
+          <div className="login-wrapper">
+          <Link to='/login' className="nav-link btn">Already have an account?</Link>
+          </div>
+          </Box>
       </div>
       <Footer />
     </>

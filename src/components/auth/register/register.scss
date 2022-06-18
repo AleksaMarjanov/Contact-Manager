@@ -2,24 +2,35 @@ form {
   background-color: #fff;
   box-shadow: 0 3px 14px #000;
   width: 300px !important;
+  margin-bottom: 2rem;
 
   .button {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 15px;
+    
   }
   .button:hover {
     transform: translateY(-4px);
     transition: all 0.1 ease-in-out;
     color: red;
   }
+
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+  }
 }
 
-h1 {
+.header-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 3rem;
 }
+
