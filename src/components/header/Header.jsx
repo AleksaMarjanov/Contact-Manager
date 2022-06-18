@@ -7,6 +7,7 @@ import * as React from "react";
 const Header = () => {
   // if user is logged in it will display name of user and logout button
   const isUserLoggedIn = getLoggedUser();
+  console.log('This is the logged username:',isUserLoggedIn);
   // method for logout
   const handleLogout = () => {
     localStorage.removeItem("loggedUser");
