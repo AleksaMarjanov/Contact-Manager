@@ -112,6 +112,7 @@ const Register = () => {
               required={true}
             />
           </div>
+          
           <Button type="submit" className="button" color="primary">
             Submit
           </Button>

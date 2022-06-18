@@ -6,6 +6,7 @@ import Header from "./../../header/Header";
 import Footer from "../../footer/Footer";
 import { Box, Button } from "@mui/material";
 import { TextField } from "@mui/material";
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,9 +14,9 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+       
   const [error, setError] = useState("");
-
+ 
   const onInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -77,6 +78,9 @@ const Login = () => {
           <Button type="submit" color="primary">
             Login
           </Button>
+          <div className="signup">
+          <Link to='/register'>Sign Up</Link>
+          </div> 
         </Box>
       </div>
       <Footer />
