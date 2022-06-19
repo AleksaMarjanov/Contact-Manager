@@ -21,6 +21,10 @@ const TaskCard = ({ task, deleteTask, changeStatus }) => {
   };
 
   const getNextStateButton = () => {
+    if (task.authorId !== loggedUser.id && loggedUser.role !== "admin") {
+      return;
+    }
+
     switch (task.status) {
       case TaskStatus.NEW:
         return (
@@ -54,6 +58,26 @@ const TaskCard = ({ task, deleteTask, changeStatus }) => {
     }
   };
 
+  const renderEditButton = () => {
+    if (loggedUser.role === "admin" || loggedUser.id === task.authorId) {
+      return (
+        <EditIcon color="success" className="edit" onClick={navigateToEdit} />
+      );
+    }
+  };
+
+  const renderDeleteButton = () => {
+    if (loggedUser.role === "admin" || loggedUser.id === task.authorId) {
+      return (
+        <DeleteIcon
+          color="error"
+          className="edit"
+          onClick={() => deleteTask(task.id)}
+        />
+      );
+    }
+  };
+
   return (
     <>
       <div className="task-card-wrapper">
@@ -82,20 +106,8 @@ const TaskCard = ({ task, deleteTask, changeStatus }) => {
           </CardContent>
           <CardActions>
             <div className="btn-holder">
-              {loggedUser && loggedUser.id === task.authorId && (
-                <EditIcon
-                  color="success"
-                  className="edit"
-                  onClick={navigateToEdit}
-                />
-              )}
-              {loggedUser && loggedUser.id === task.authorId && (
-                <DeleteIcon
-                  color="error"
-                  className="edit"
-                  onClick={() => deleteTask(task.id)}
-                />
-              )}
+              {renderEditButton()}
+              {renderDeleteButton()}
               {getNextStateButton()}
             </div>
           </CardActions>
