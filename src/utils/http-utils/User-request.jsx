@@ -54,6 +54,9 @@ export const login = async (user) => {
 
   if (!foundUser) throw new Error("Invalid username/password");
 
+  // if (!foundUser.isActive) 
+  //   throw new Error('User is blocked');
+
   localStorage.setItem("loggedUser", JSON.stringify(foundUser));
 
   return foundUser;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./userformedit.scss";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, TextField, FormControlLabel} from "@mui/material";
 import { addUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
@@ -18,6 +18,8 @@ const UserFormEdit = () => {
     address: "",
   });
 
+  const {isActive, name, picture, email, phone, address} = newUser;
+
   useEffect(() => {
     if (params.id) {
       getUserById(params.id).then((response) => {
@@ -27,9 +29,9 @@ const UserFormEdit = () => {
   }, [params.id]);
 
   const onInputChange = (e) => {
-    let { name, value, checked } = e.target;
+    let value = e.target.value;
+    let { name, checked } = e.target;
 
-    value = e.target.value;
     if (name === "isActive") {
       value = checked;
     }
@@ -63,7 +65,7 @@ const UserFormEdit = () => {
         >
           <TextField
             name="name"
-            value={newUser.name}
+            value={name}
             id="outlined-required"
             label="Name"
             placeholder="Jane Doe"
@@ -72,7 +74,7 @@ const UserFormEdit = () => {
           />
           <TextField
             name="email"
-            value={newUser.email}
+            value={email}
             id="outlined-required"
             label="E-Mail"
             placeholder="janedoe@hotmail.com"
@@ -81,7 +83,7 @@ const UserFormEdit = () => {
           />
           <TextField
             name="picture"
-            value={newUser.picture}
+            value={picture}
             id="outlined-required"
             label="Picture"
             placeholder="Enter Picture URL"
@@ -89,7 +91,7 @@ const UserFormEdit = () => {
           />
           <TextField
             name="phone"
-            value={newUser.phone}
+            value={phone}
             id="outlined-required"
             label="Phone"
             placeholder="(303)-333-4444"
@@ -98,7 +100,7 @@ const UserFormEdit = () => {
           />
           <TextField
             name="address"
-            value={newUser.address}
+            value={address}
             id="outlined-required"
             label="Address"
             placeholder="7939 New St.
@@ -106,13 +108,12 @@ const UserFormEdit = () => {
             onChange={onInputChange}
             required={true}
           />
-          <Checkbox
-            name="isActive"
-            value={newUser.isActive}
-            onChange={onInputChange}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-          Active
+          <FormControlLabel
+          value={isActive}
+          control={<Checkbox />}
+          label="Active"
+          labelPlacement="start"
+        />
           <Button className="button" type="submit" color="primary">
             Submit
           </Button>

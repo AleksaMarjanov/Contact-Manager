@@ -34,7 +34,6 @@ const App = () => {
             </NonAuthenticatedGuard>
           }
         />
-
         <Route
           path="/"
           element={

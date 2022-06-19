@@ -4,9 +4,7 @@ import { registerUser } from "./../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router";
 import Header from "./../../header/Header";
 import Footer from "./../../footer/Footer";
-import { TextField } from "@mui/material";
-import { Box } from "@mui/material";
-import { Button } from "@mui/material";
+import { TextField, Box, Button } from "@mui/material";
 import { Link } from 'react-router-dom';
 
 const Register = () => {

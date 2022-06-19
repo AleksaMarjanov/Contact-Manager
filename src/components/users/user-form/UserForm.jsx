@@ -23,6 +23,8 @@ const UserForm = () => {
     }
   });
 
+  const {isActive, name, picture, email, phone, address, role} = newUser;
+
   useEffect(() => {
     if (params.id) {
       getUserById(params.id).then((response) => {
@@ -46,7 +48,7 @@ const UserForm = () => {
       };
     });
   };
-
+  
   const onFormSubmit = (e) => {
     e.preventDefault();
     addUser(newUser).then(() => {
@@ -56,13 +58,13 @@ const UserForm = () => {
 
   // getting control for admin role
   const getAdminControl = () => {
-    if (loggedUser === 'admin') {
+    if (loggedUser.role === 'admin') {
       return(
         <>
     <FormControlLabel
-          value="start"
+          value={isActive}
           control={<Checkbox />}
-          label="Start"
+          label="Active"
           labelPlacement="start"
         />
         <FormControl fullWidth>
@@ -72,7 +74,7 @@ const UserForm = () => {
           id="demo-simple-select"
           label="role"
           name="role"
-          value={newUser.role}
+          value={role}
           placeholder="Select Status"
           onChange={onInputChange}
         >
@@ -99,7 +101,7 @@ const UserForm = () => {
         >
           <TextField
             name="name"
-            value={newUser.name}
+            value={name}
             id="outlined-required"
             label="Name"
             placeholder="Jane Doe"
@@ -108,7 +110,7 @@ const UserForm = () => {
           />
           <TextField
             name="email"
-            value={newUser.email}
+            value={email}
             id="outlined-required"
             label="E-Mail"
             placeholder="janedoe@hotmail.com"
@@ -117,7 +119,7 @@ const UserForm = () => {
           />
           <TextField
             name="picture"
-            value={newUser.picture}
+            value={picture}
             id="outlined-required"
             label="Picture"
             placeholder="Enter Picture URL"
@@ -125,7 +127,7 @@ const UserForm = () => {
           />
           <TextField
             name="phone"
-            value={newUser.phone}
+            value={phone}
             id="outlined-required"
             label="Phone"
             placeholder="(303)-333-4444"
@@ -134,7 +136,7 @@ const UserForm = () => {
           />
           <TextField
             name="address"
-            value={newUser.address}
+            value={address}
             id="outlined-required"
             label="Address"
             placeholder="7939 New St.
