@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { getUserById } from "../../../utils/http-utils/User-request";
 import UserCard from "./../user-card/UserCard";
 import { deleteUser } from "./../../../utils/http-utils/User-request";
@@ -12,6 +12,8 @@ const User = () => {
   const [user, setUser] = useState(null);
   const [userTasks, setUserTasks] = useState([]);
   const [tasks, setTasks] = useState([]);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (params.id) {
@@ -42,8 +44,10 @@ const User = () => {
     task.status = status;
     addTask(task).then(() => {
       setTasks([...tasks]);
+    }).then(() => {
+      navigate(`/user/${user.id}`)
+      window.location.reload();
     })
-    window.location.reload();
   };
 
   return (
