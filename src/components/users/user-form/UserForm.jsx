@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./userform.scss";
-import { Box, Button, TextField, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
-import { addUser, getUserById } from "../../../utils/http-utils/User-request";
+import { Box, Button, TextField, FormControl, FormControlLabel, InputLabel, Select, MenuItem } from "@mui/material";
+import { addUser, getLoggedUser, getUserById } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
 import Checkbox from "@mui/material/Checkbox";
 
 const UserForm = () => {
+  const loggedUser = getLoggedUser()
   const params = useParams();
   const navigate = useNavigate();
   const [newUser, setNewUser] = useState({
@@ -53,6 +54,37 @@ const UserForm = () => {
     });
   };
 
+  // getting control for admin role
+  const getAdminControl = () => {
+    if (loggedUser === 'admin') {
+      return(
+        <>
+    <FormControlLabel
+          value="start"
+          control={<Checkbox />}
+          label="Start"
+          labelPlacement="start"
+        />
+        <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Role</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          label="role"
+          name="role"
+          value={newUser.role}
+          placeholder="Select Status"
+          onChange={onInputChange}
+        >
+        <MenuItem value="user">User</MenuItem>
+  <MenuItem value="admin">Admin</MenuItem>
+        </Select>
+      </FormControl>
+        </>
+      )
+    }
+  }
+
   return (
     <>
       {" "}
@@ -97,8 +129,8 @@ const UserForm = () => {
             id="outlined-required"
             label="Phone"
             placeholder="(303)-333-4444"
-            onChange={onInputChange}
             required={true}
+            onChange={onInputChange}
           />
           <TextField
             name="address"
@@ -110,29 +142,7 @@ const UserForm = () => {
             onChange={onInputChange}
             required={true}
           />
-          <Checkbox
-            name="isActive"
-            value={newUser.isActive}
-            onChange={onInputChange}
-            inputProps={{ "aria-label": "controlled" }}
-          />
-          Active
-          <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Role</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            label="role"
-            name="role"
-            value={newUser.role}
-            placeholder="Select Status"
-            onChange={onInputChange}
-          >
-          <MenuItem value="user">User</MenuItem>
-    <MenuItem value="admin">Admin</MenuItem>
-          </Select>
-        </FormControl>
-        
+          {getAdminControl()}
           <Button className="button" type="submit" color="primary">
             Submit
           </Button>
