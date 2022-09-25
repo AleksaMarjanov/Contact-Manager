@@ -1,7 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+### 
+Task Manager Application, It  has CRUD Functionality . Anybody can create an account/register and then login, create tasks and manage them. Only authenticated ( admin ) user and other users that are granted those privileges can delete any user/task.  Non-authenticated user can only view/create/update and delete their own tasks and manage just their own data. 
 ## Using MockAPI for REST API
 
 ### Project has been deployed to AWS Elastic Beanstalk
