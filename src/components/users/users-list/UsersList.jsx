@@ -4,11 +4,13 @@ import UserCard from "../user-card/UserCard";
 import {
   deleteUser,
   getAllUsers,
+  getLoggedUser
 } from "../../../utils/http-utils/User-request";
-// import  uuid  from "uuidv4";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
+  const loggedUser = getLoggedUser()
+
 
   useEffect(() => {
     getAllUsers().then((response) => {
@@ -24,13 +26,15 @@ const UsersList = () => {
     });
   };
 
-  return (
-    <div className="users-list-wrapper">
-      {users.map((user, index) => (
-        <UserCard key={index} user={user} deleteUser={deleteUserHandler} />
-      ))}
-    </div>
-  );
-};
+       return (
+         <div className="users-list-wrapper">
+           {users.map((user, index) => (
+             <UserCard key={index} user={user} deleteUser={deleteUserHandler} />
+           ))}
+         </div>
+       );
+      }
+    
+  
 
 export default UsersList;
