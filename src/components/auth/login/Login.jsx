@@ -58,7 +58,7 @@ const Login = () => {
             <TextField
               required={true}
               name="email"
-              value={newUser.email}
+              value={newUser.email.toLowerCase()}
               id="outlined-required"
               label="E-Mail"
               placeholder="Enter E-mail"
