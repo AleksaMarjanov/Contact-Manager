@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const apiUrl = "http://localhost:3005/users";
-const apiUrl = "https://62926f7acd0c91932b724671.mockapi.io/Users";
+const apiUrl = process.env.REACT_APP_USERS_BASE_URL;
 
 export const getLoggedUser = () => {
   return JSON.parse(localStorage.getItem("loggedUser"));

@@ -8,7 +8,7 @@ export const TaskStatus = {
   DONE: "Done",
 };
 // const apiUrl = "http://localhost:3005/tasks"; // Using Json server
-const apiUrl = "https://62918273cd0c91932b63d8a7.mockapi.io/Task";
+const apiUrl = process.env.REACT_APP_TASK_BASE_URL;
 
 export const getAllTasks = () => {
   return axios.get(apiUrl);
