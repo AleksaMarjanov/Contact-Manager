@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./userformedit.scss";
-import { Box, Button, TextField, FormControlLabel} from "@mui/material";
+import { Box, Button, TextField, FormControlLabel, FormControl, InputLabel, Select, MenuItem} from "@mui/material";
 import { addUser, getUserById, getLoggedUser } from "../../../utils/http-utils/User-request";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
@@ -9,6 +9,7 @@ import Checkbox from "@mui/material/Checkbox";
 const UserFormEdit = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const loggedUser = getLoggedUser();
   const [newUser, setNewUser] = useState({
     isActive: false,
     name: "",
@@ -16,9 +17,13 @@ const UserFormEdit = () => {
     email: "",
     phone: "",
     address: "",
+    role: {
+      admin: "",
+      user: ""
+    }
   });
 
-  const {isActive, name, picture, email, phone, address} = newUser;
+  const {isActive, name, picture, email, phone, address, role} = newUser;
 
   useEffect(() => {
     if (params.id) {
@@ -50,6 +55,31 @@ const UserFormEdit = () => {
       navigate("/users-list");
     });
   };
+
+  const getAdminControl = () => {
+    if(loggedUser.role === 'admin') {
+      return (
+        <>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Role</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="role"
+              name="role"
+              value={role}
+              placeholder="Select Status"
+              onChange={onInputChange}
+            >
+              <MenuItem value="user">User</MenuItem>
+              <MenuItem value="admin">Admin</MenuItem>
+            </Select>
+          </FormControl>
+        </>
+      )
+    }
+    
+  }
 
   return (
     <>
@@ -114,6 +144,7 @@ const UserFormEdit = () => {
           label="Active"
           labelPlacement="start"
         />
+        {getAdminControl()}
           <Button className="button" type="submit" color="primary">
             Submit
           </Button>

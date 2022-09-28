@@ -20,3 +20,10 @@
   align-items: center;
   margin-top: 30px;
 }
+
+@media screen and (min-device-width: 300px) and (max-device-width: 500px) { 
+  .user-form-wrapper {
+    margin-top: 50px;
+    overflow: hidden;
+  }
+}

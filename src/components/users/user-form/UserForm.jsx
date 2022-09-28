@@ -69,65 +69,12 @@ const UserForm = () => {
     });
   };
 
- 
-  return (
-    <>
-    {loggedUser.role === 'admin' ? (
-      <div className="user-form-wrapper">
-      <Box
-        component="form"
-        sx={{
-          "& .MuiTextField-root": { m: 2, width: "25ch" },
-        }}
-        autoComplete="off"
-        onSubmit={onFormSubmit}
-      >
-        <TextField
-          name="name"
-          value={name}
-          id="outlined-required"
-          label="Name"
-          placeholder="Jane Doe"
-          onChange={onInputChange}
-          required={true}
-        />
-        <TextField
-          name="email"
-          value={email}
-          id="outlined-required"
-          label="E-Mail"
-          placeholder="janedoe@hotmail.com"
-          onChange={onInputChange}
-          required={true}
-        />
-        <TextField
-          name="picture"
-          value={picture}
-          id="outlined-required"
-          label="Picture"
-          placeholder="Enter Picture URL"
-          onChange={onInputChange}
-        />
-        <TextField
-          name="phone"
-          value={phone}
-          id="outlined-required"
-          label="Phone"
-          placeholder="(303)-333-4444"
-          required={true}
-          onChange={onInputChange}
-        />
-        <TextField
-          name="address"
-          value={address}
-          id="outlined-required"
-          label="Address"
-          placeholder="7939 New St.
-            Huntington, NY 11743"
-          onChange={onInputChange}
-          required={true}
-        />
-        <FormControlLabel
+  // getting control for admin role
+  const getAdminControl = () => {
+    if (loggedUser.role === "admin") {
+      return (
+        <>
+          <FormControlLabel
             value={isActive}
             control={<Checkbox />}
             label="Active"
@@ -148,13 +95,14 @@ const UserForm = () => {
               <MenuItem value="admin">Admin</MenuItem>
             </Select>
           </FormControl>
-  
-        <Button className="button" type="submit" color="primary">
-          Submit
-        </Button>
-      </Box>
-    </div>
-    ): (
+        </>
+      );
+    }
+  };
+
+  return (
+    <>
+      {" "}
       <div className="user-form-wrapper">
         <Box
           component="form"
@@ -209,12 +157,12 @@ const UserForm = () => {
             onChange={onInputChange}
             required={true}
           />
+          {getAdminControl()}
           <Button className="button" type="submit" color="primary">
             Submit
           </Button>
         </Box>
       </div>
-    )}
     </>
   );
 };
