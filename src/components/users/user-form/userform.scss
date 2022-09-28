@@ -20,3 +20,17 @@
   align-items: center;
   margin-top: 30px;
 }
+
+@media screen and (min-device-width: 300px) and (max-device-width: 500px) {
+  .user-form-wrapper {
+  margin-top: 80px;
+  overflow: hidden;
+  }
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 900px) {
+  .user-form-wrapper {
+    margin-top: 150px;
+    overflow: hidden;
+  }
+}

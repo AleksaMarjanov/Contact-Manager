@@ -13,5 +13,15 @@
     width: 500px;
     background-color: #fff;
     box-shadow: 0 3px 14px #000;
+    
+    .button {
+      color: white;
+      background-color: #64b3d9;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
+
