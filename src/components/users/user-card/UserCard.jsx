@@ -1,5 +1,5 @@
 import "./usercard.scss";
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router";
 import InfoIcon from "@mui/icons-material/Info";
 import EditIcon from "@mui/icons-material/Edit";
@@ -9,9 +9,17 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import { getLoggedUser } from "../../../utils/http-utils/User-request";
 
 const UserCard = ({ user, deleteUser }) => {
   const navigate = useNavigate();
+  const loggedUser = getLoggedUser();
+  const [newUser, setNewUser] = useState({
+    role: {
+      admin: "",
+      user: "",
+    }
+  })
 
   const redirectToDetails = () => {
     navigate(`/user/${user.id}`);
@@ -48,21 +56,32 @@ const UserCard = ({ user, deleteUser }) => {
         </CardContent>
         <CardActions>
           <div className="btn-holder">
-            <EditIcon
-              color="success"
-              onClick={redirectToEdit}
-              className="edit"
-            />
-            <DeleteIcon
-              color="error"
-              onClick={() => deleteUser(user.id)}
-              className="delete"
-            />
-            <InfoIcon
+            {loggedUser.role === 'admin' ? (
+              <>
+              <EditIcon
+                color="success"
+                onClick={redirectToEdit}
+                className="edit"
+              />
+              <InfoIcon
               color="primary"
               onClick={redirectToDetails}
               className="info"
-            />
+              />
+              <DeleteIcon
+                color="error"
+                onClick={() => deleteUser(user.id)}
+                className="delete"
+              />
+              </>
+            ): (
+              <InfoIcon
+                color="primary"
+                onClick={redirectToDetails}
+                className="info"
+              />
+
+            )}
           </div>
         </CardActions>
       </Card>
