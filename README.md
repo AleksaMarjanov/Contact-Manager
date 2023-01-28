@@ -4,7 +4,7 @@ Task Manager Application, It  has CRUD Functionality . Anybody can create an acc
 
 ### Project has been deployed to AWS Elastic Beanstalk
 
-## <a href='https://main.d36r31clvcovfo.amplifyapp.com/login' >View Here</a>
+## <a href='https://main.d2x959qc7fezpo.amplifyapp.com/' >View Here</a>
 
 # Register Page
 
